@@ -1,4 +1,4 @@
-####[NSStatusBar](https://developer.apple.com/reference/appkit/nsstatusbar) : macOS系统的顶部导航栏item
+-[NSStatusBar](https://developer.apple.com/reference/appkit/nsstatusbar) : macOS系统的顶部导航栏item
 {% highlight object c %}
 @interface AppDelegate (){
     NSStatusItem * statusItem;
@@ -17,7 +17,7 @@
 }
 {% endhighlight %}
 
-####[NSPopover](https://developer.apple.com/reference/appkit/nspopover) : pop视图
+-[NSPopover](https://developer.apple.com/reference/appkit/nspopover) : pop视图
 {% highlight object c %}
 @interface AppDelegate (){
     NSPopover * popover;
@@ -39,5 +39,7 @@
 }
 {% endhighlight %}
 
-####效果图
+-效果图
 ![NSStatusBar + NSPopover效果图](http://upload-images.jianshu.io/upload_images/336727-c9945e7b7576aa2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
