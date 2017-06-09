@@ -1,26 +1,28 @@
 ---
-title: ''
 layout: default
 ---
 
-  {% for post in site.posts %}
-    <article class="post">
-      <header class="post-header">
-        <h2 class="post-title"><a href="{{ site.github_url }}{{ post.url }}">{{ post.title }}</a></h2>
-      </header>
-      <section class="post-excerpt">
-        <p>{{ post.description }}</p>
-      </section>
-      <footer class="post-meta">
-        by <a href="{{ site.github_url }}about">{{ site.author.name }}</a> <img class="author-thumb" src="{{ site.author.picture }}" alt="{{ site.author.name }}">
-        <time class="post-date" datetime="{{ post.date | date: "%-Y-%m-%d" }}">{{ post.date | date: "%d %b %Y" }}</time>
-      </footer>
-    </article>
-  {% endfor %}
+<div class="home">
+ <div class="top card">
+    <a class="email" href="mailto:{{site.email}}">{{site.email}}</a>
+    <p class="description">{{ site.description }}</p>
+    <a href="about" class="btn">Read More</a>
+  </div>
+  <div class="posts card">
+      <div class="card-content white-text">
+      <span class="card-title">Posts</span>
 
-  <nav class="pagination" role="navigation">
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.next_page %}
-    <a class="older-posts" href="{{ paginator.next_page_path }}">Older Posts <span aria-hidden="true">&rarr;</span></a>
-    {% endif %}
-  </nav>
+      <ul class="post-list">
+        {% for post in site.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>            
+          </li>
+        {% endfor %}
+      </ul>
+
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      </div>
+   </div>
+
+</div>
