@@ -1,18 +1,65 @@
-# Jekyll template
-Light and beautiful blog style template for jekyll
+## Voyager
 
-[![Gitter](https://badges.gitter.im/nikrich/jekyll-slender-template.svg)](https://gitter.im/nikrich/jekyll-slender-template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Twitter](https://img.shields.io/badge/Twitter-@slender_rich-blue.svg?style=flat)](https://twitter.com/slender_rich)
+Just another jekyll theme. Demo: <http://redvi.github.io/voyager>
 
-![preview](http://i.imgur.com/UzW9sxd.jpg)
+### Feathures:
 
-## Demo
-Find a demo [here](http://nikrich.github.io/jekyll-wing-template/#)
+All HTML files are compressed (see `_layouts/compress.html`).
 
-## Contributing
+**Post**
 
-1. Clone the repo
-2. Checkout the dev branch ( Do not work directly on master )
-3. Use ```jekyll serve``` to run the project
-4. Make your changes and test
-5. Submit a pull request
+All post settings can be changed. Example:
+
+```
+---
+layout: post
+bg: '2016/background.jpg'
+title: "Post Heading"
+crawlertitle: "page title"
+summary: "post description"
+date: 2016-06-29
+tags : ['front-end']
+slug: post-url
+author: "Author"
+categories: posts
+---
+```
+
+`bg` is a path to background of your article. By default backgrounds are placed in the `assets/images` directory.
+
+**Page**
+
+If page contains `active` tag, it will be show on site menu.
+
+```
+---
+layout: page
+title: "About"
+permalink: /about/
+active: about
+---
+```
+
+**Archive**
+
+Archive page is sorting posts by tags. No more than one tag in one post.
+
+Good:
+
+```
+tags : ['front-end']
+```
+
+Bad:
+
+```
+tags : ['front-end', 'jekyll']
+```
+
+Don't forget to change `_config.yml`.
+
+## Production environment
+
+Build for production:
+
+`JEKYLL_ENV=production jekyll build`

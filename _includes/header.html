@@ -1,15 +1,20 @@
-<header class="site-header">
+<header class="main-header content-wrapper">
 
-  <div class="wrapper">
+  <input type="checkbox" id="menu-checkbox" />
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    
-  </div>
+  <nav class="center-wrapper nav-main">
 
-  <div class="header-badge">
-    <a href="{{ site.baseurl }}/">
-        <img src="/jekyll-wing-template/assets/headshot.jpg" />
-    </a>
-  </div>
-    
+    <a class="blog-logo" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    {% for my_page in site.pages %}
+      {% if my_page.active %}
+        <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+      {% endif %}
+    {% endfor %}
+
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+
+    <label for="menu-checkbox" class="toggle-button" data-open="☰" data-close="☰" onclick></label>
+  </nav>
+
 </header>

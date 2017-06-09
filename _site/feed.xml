@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nelson Den</title>
-    <description>生活远比电影精彩!</description>
-    <link>http://localhost:4000/jekyll-wing-template/</link>
-    <atom:link href="http://localhost:4000/jekyll-wing-template/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Jun 2017 14:17:49 +0800</pubDate>
-    <lastBuildDate>Fri, 09 Jun 2017 14:17:49 +0800</lastBuildDate>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 09 Jun 2017 16:45:23 +0800</pubDate>
+    <lastBuildDate>Fri, 09 Jun 2017 16:45:23 +0800</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
     
       <item>
-        <title>UIDebuggingInformationOverlay</title>
+        <title>UIDebuggingInformationOverlay 界面调试工具</title>
         <description>&lt;h5 id=&quot;uikit添加了私有类uidebugginginformationoverlay字面理解为界面调试信息层&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIKit&lt;/code&gt;添加了私有类&lt;code class=&quot;highlighter-rouge&quot;&gt;UIDebuggingInformationOverlay&lt;/code&gt;,字面理解为&lt;code class=&quot;highlighter-rouge&quot;&gt;界面调试信息层&lt;/code&gt;&lt;/h5&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-d9f7c7f3ce0dda1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;UIDebuggingInformationOverlay界面.png&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-d9f7c7f3ce0dda1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;UIDebuggingInformationOverlay界面.png&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;usage&quot;&gt;usage&lt;/h4&gt;
 &lt;ul&gt;
@@ -70,23 +69,24 @@
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-984586dafdefe69c.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Vertical.gif&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-f565644c4647a148.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Horizontal.gif&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-984586dafdefe69c.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Vertical.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-f565644c4647a148.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Horizontal.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;Spec Compare
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;将屏幕截图添加到设备，然后从“规格比较”屏幕中选择。所选屏幕截图将显示在实际应用程序的顶部。然后，您可以向下拖动以减少alpha，并将规范与实际实现进行比较。
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这个功能就可以实现界面与设计图的对比!!!&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-e4270abdd7bbf6e5.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Spec Compare.gif&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;这个功能就可以实现界面与设计图的对比!!!&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/336727-e4270abdd7bbf6e5.gif?imageMogr2/auto-orient/strip&quot; alt=&quot;Spec Compare.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;System Color Audit
     &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;暂时未能获取任何信息
 &lt;/code&gt;&lt;/pre&gt;
@@ -95,14 +95,59 @@
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Thu, 08 Jun 2017 17:38:45 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-wing-template/jekyll/update/2017/06/08/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-wing-template/jekyll/update/2017/06/08/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7.html</guid>
+        <pubDate>Wed, 29 Jun 2016 21:09:47 +0800</pubDate>
+        <link>http://localhost:4000/posts/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</guid>
+        
+        <category>IOS</category>
         
         
-        <category>jekyll</category>
+        <category>posts</category>
         
-        <category>update</category>
+      </item>
+    
+      <item>
+        <title>You Don't Know JS: ES6 &amp; Beyond</title>
+        <description>&lt;p&gt;Before you dive into this book, you should have a solid working proficiency over JavaScript up to the most recent standard (at the time of this writing), which is commonly called ES5 (technically ES 5.1). Here, we plan to talk squarely about the upcoming ES6, as well as cast our vision beyond to understand how JS will evolve moving forward.&lt;/p&gt;
+
+&lt;p&gt;If you are still looking for confidence with JavaScript, I highly recommend you read the other titles in this series first:&lt;/p&gt;
+
+&lt;p&gt;Up &amp;amp; Going: Are you new to programming and JS? This is the roadmap you need to consult as you start your learning journey.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Up &amp;amp; Going&lt;/li&gt;
+  &lt;li&gt;Scope &amp;amp; Closures&lt;/li&gt;
+  &lt;li&gt;this &amp;amp; Object Prototypes&lt;/li&gt;
+  &lt;li&gt;Types &amp;amp; Grammar&lt;/li&gt;
+  &lt;li&gt;Async &amp;amp; Performance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;/assets/images/rails.jpg&quot;&gt;&lt;img src=&quot;/assets/images/rails.jpg&quot; alt=&quot;railroad&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’ve already read all those titles and you feel pretty comfortable with the topics they cover, it’s time we dive into the evolution of JS to explore all the changes coming not only soon but farther over the horizon.&lt;/p&gt;
+
+&lt;h2 id=&quot;let-declarations&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; Declarations&lt;/h2&gt;
+
+&lt;p&gt;However, we can now create declarations that are bound to any block, called (unsurprisingly) &lt;em&gt;block scoping&lt;/em&gt;. This means all we need is a pair of &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; to create a scope. Instead of using var, which always declares variables attached to the enclosing function (or global, if top level) scope, use &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Wed, 29 Jun 2016 21:09:47 +0800</pubDate>
+        <link>http://localhost:4000/posts/es6/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/es6/</guid>
+        
+        <category>front-end</category>
+        
+        
+        <category>posts</category>
         
       </item>
     
@@ -123,14 +168,14 @@
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 19 Jul 2016 17:49:45 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-wing-template/jekyll/update/2016/07/19/welcome-to-jekyll-Copy.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-wing-template/jekyll/update/2016/07/19/welcome-to-jekyll-Copy.html</guid>
-        
+        <pubDate>Wed, 29 Jun 2016 00:09:47 +0800</pubDate>
+        <link>http://localhost:4000/posts/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/posts/welcome-to-jekyll/</guid>
         
         <category>jekyll</category>
         
-        <category>update</category>
+        
+        <category>posts</category>
         
       </item>
     

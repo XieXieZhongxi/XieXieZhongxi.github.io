@@ -1,13 +1,18 @@
 ---
+bg: "tools.jpg"
 layout: post
-title:  "UIDebuggingInformationOverlay"
-date:   2017-06-08 11:38:45 +0200
-categories: jekyll update
+title:  "UIDebuggingInformationOverlay 界面调试工具"
+crawlertitle: "Nelson"
+summary: "技术在于分享"
+date:   2016-06-29 20:09:47 +0700
+categories: posts
+tags: ['IOS']
+author: Nelson
 ---
 
 ##### `UIKit`添加了私有类`UIDebuggingInformationOverlay`,字面理解为`界面调试信息层`
 
-- ![UIDebuggingInformationOverlay界面.png](http://upload-images.jianshu.io/upload_images/336727-d9f7c7f3ce0dda1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![UIDebuggingInformationOverlay界面.png](http://upload-images.jianshu.io/upload_images/336727-d9f7c7f3ce0dda1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### usage
 - 因为是私有类,所有审核的时候需要设置
@@ -54,9 +59,9 @@ categories: jekyll update
 它可以测量屏幕元素的尺寸（以点为单位）。首先，选择是否要在“水平”或“垂直”轴上查看测量。然后在屏幕上拖动手指，使用控制台内的放大查看器来协助您
 ```
 
-- ![Vertical.gif](http://upload-images.jianshu.io/upload_images/336727-984586dafdefe69c.gif?imageMogr2/auto-orient/strip)
+![Vertical.gif](http://upload-images.jianshu.io/upload_images/336727-984586dafdefe69c.gif?imageMogr2/auto-orient/strip)
 
-- ![Horizontal.gif](http://upload-images.jianshu.io/upload_images/336727-f565644c4647a148.gif?imageMogr2/auto-orient/strip)
+![Horizontal.gif](http://upload-images.jianshu.io/upload_images/336727-f565644c4647a148.gif?imageMogr2/auto-orient/strip)
 
 - Spec Compare
 ```
@@ -65,7 +70,7 @@ categories: jekyll update
 
 - `这个功能就可以实现界面与设计图的对比!!!`
 
-- ![Spec Compare.gif](http://upload-images.jianshu.io/upload_images/336727-e4270abdd7bbf6e5.gif?imageMogr2/auto-orient/strip)
+![Spec Compare.gif](http://upload-images.jianshu.io/upload_images/336727-e4270abdd7bbf6e5.gif?imageMogr2/auto-orient/strip)
 
 - System Color Audit
 ```
