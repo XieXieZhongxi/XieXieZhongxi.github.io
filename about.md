@@ -1,7 +1,9 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+iOS开发者,现居广州,期待着旅行与骑行.
+[GitHub](https://github.com/XieXieZhongxi)
+[简书](http://www.jianshu.com/u/94cb903ac080)
