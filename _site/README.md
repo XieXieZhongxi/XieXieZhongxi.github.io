@@ -1,4 +1,3 @@
-# toubou91.github.io
-> My jekyll blog
+### Welcome to my blog
 
-Credits @ [flexible-jekyll](https://github.com/artemsheludko/flexible-jekyll)
+http://xiezhongxi.com
