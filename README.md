@@ -1,3 +1,3 @@
 ### Welcome to my blog
 
-http://www.xiezhongxi.com
+http://xiezhongxi.com

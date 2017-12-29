@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>UIDebuggingInformationOverlay 界面调试工具 - 仲习的主页</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="仲习的主页" property="og:site_name">
+  
+    <meta content="UIDebuggingInformationOverlay 界面调试工具" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" property="og:url">
+  
+  
+    <meta content="2016-06-29T21:09:47+08:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/zhongxi.jpg" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="iOS" property="article:tag">
+    
+    <meta content="UIKit" property="article:tag">
+    
+    <meta content="UIDebuggingInformationOverlay" property="article:tag">
+    
+    <meta content="调试" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="UIDebuggingInformationOverlay 界面调试工具">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">
+  
+  
+    <meta name="twitter:description" content="">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/zhongxi.jpg">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!-- Track all pages, according to https://desiredpersona.com/google-analytics-jekyll/ -->
+	
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/zhongxi.jpg" alt="谢仲习"></a>
+      </div>
+      <div class="author-name">谢仲习</div>
+      <p>iOS开发工程师,现居广州</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+        
+        
+          <li class="github"><a href="http://github.com/XieXieZhongxi" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+        
+          <li class="email"><a href="mailto:xiezhongxi0525@foxmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; 谢仲习</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">UIDebuggingInformationOverlay 界面调试工具</h1>
+        <div class="page-date"><span>2016, Jun 29&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h3 id="uikit-添加了私有类-uidebugginginformationoverlay-字面理解为-界面调试信息层">UIKit 添加了私有类 UIDebuggingInformationOverlay ,字面理解为 界面调试信息层</h3>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/336727-d9f7c7f3ce0dda1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="UIDebuggingInformationOverlay界面.png" /></p>
+
+<h3 id="usage">usage</h3>
+<ul>
+  <li>因为是私有类,所有审核的时候需要设置
+    <div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cp">#ifdef DEBUG
+</span><span class="p">.........</span>
+<span class="cp">#endif
+</span></code></pre>
+    </div>
+  </li>
+  <li>代码直接启动调试界面
+    <div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cp">#ifdef DEBUG
+</span>  <span class="n">Class</span> <span class="n">overlayClass</span> <span class="o">=</span> <span class="n">NSClassFromString</span><span class="p">(</span><span class="s">@"UIDebuggingInformationOverlay"</span><span class="p">);</span>
+  <span class="p">[</span><span class="n">overlayClass</span> <span class="nf">performSelector</span><span class="p">:</span><span class="n">NSSelectorFromString</span><span class="p">(</span><span class="s">@"prepareDebuggingOverlay"</span><span class="p">)];</span>
+  <span class="n">id</span> <span class="n">overlayObject</span> <span class="o">=</span> <span class="p">[</span><span class="n">overlayClass</span> <span class="nf">performSelector</span><span class="p">:</span><span class="n">NSSelectorFromString</span><span class="p">(</span><span class="s">@"overlay"</span><span class="p">)];</span>
+  <span class="p">[</span><span class="n">overlayObject</span> <span class="nf">performSelector</span><span class="p">:</span><span class="n">NSSelectorFromString</span><span class="p">(</span><span class="s">@"toggleVisibility"</span><span class="p">)];</span>
+<span class="cp">#endif
+</span></code></pre>
+    </div>
+  </li>
+  <li>手动2个手指点击状态栏启动调试界面
+    <div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cp">#ifdef DEBUG
+</span>  <span class="n">Class</span> <span class="n">overlayClass</span> <span class="o">=</span> <span class="n">NSClassFromString</span><span class="p">(</span><span class="s">@"UIDebuggingInformationOverlay"</span><span class="p">);</span>
+  <span class="p">[</span><span class="n">overlayClass</span> <span class="nf">performSelector</span><span class="p">:</span><span class="n">NSSelectorFromString</span><span class="p">(</span><span class="s">@"prepareDebuggingOverlay"</span><span class="p">)];</span>
+<span class="cp">#endif
+</span></code></pre>
+    </div>
+  </li>
+  <li>
+    <h4 id="uidebugginginformationoverlay提供了6个功能">UIDebuggingInformationOverlay提供了6个功能</h4>
+  </li>
+  <li>View Hierarchy</li>
+</ul>
+
+<p><code class="highlighter-rouge"> 您可以检查任何视图的细节，包括其框架和实例变量。如果您有多个窗口，还可以在窗口之间切换.</code></p>
+
+<ul>
+  <li>VC Hierarchy</li>
+</ul>
+
+<p><code class="highlighter-rouge">显示了主动视图控制器的层次结构。从这里，您可以检查任何视图控制器的细节，包括其视图.</code></p>
+<ul>
+  <li>Ivar Explorer</li>
+</ul>
+
+<p><code class="highlighter-rouge">可让您访问UIApplication实例的变量和任何对象变量</code></p>
+
+<ul>
+  <li>Measure</li>
+</ul>
+
+<p><code class="highlighter-rouge">它可以测量屏幕元素的尺寸（以点为单位）。首先，选择是否要在“水平”或“垂直”轴上查看测量。然后在屏幕上拖动手指，使用控制台内的放大查看器来协助您</code></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/336727-984586dafdefe69c.gif?imageMogr2/auto-orient/strip" alt="Vertical.gif" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/336727-f565644c4647a148.gif?imageMogr2/auto-orient/strip" alt="Horizontal.gif" /></p>
+
+<ul>
+  <li>Spec Compare</li>
+</ul>
+
+<p><code class="highlighter-rouge">将屏幕截图添加到设备，然后从“规格比较”屏幕中选择。所选屏幕截图将显示在实际应用程序的顶部。然后，您可以向下拖动以减少alpha，并将规范与实际实现进行比较。</code></p>
+
+<blockquote>
+  <p>这个功能就可以实现界面与设计图的对比!!!</p>
+</blockquote>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/336727-e4270abdd7bbf6e5.gif?imageMogr2/auto-orient/strip" alt="Spec Compare.gif" /></p>
+
+<ul>
+  <li>System Color Audit</li>
+</ul>
+
+<p><code class="highlighter-rouge">暂时未能获取任何信息</code></p>
+
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=UIDebuggingInformationOverlay 界面调试工具&url=http://localhost:4000/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/UIDebuggingInformationOverlay-%E7%95%8C%E9%9D%A2%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#iOS" class="tag">&#35; iOS</a>
+          
+            <a href="/tags#UIKit" class="tag">&#35; UIKit</a>
+          
+            <a href="/tags#UIDebuggingInformationOverlay" class="tag">&#35; UIDebuggingInformationOverlay</a>
+          
+            <a href="/tags#调试" class="tag">&#35; 调试</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//thodorisbais.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-108110726-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

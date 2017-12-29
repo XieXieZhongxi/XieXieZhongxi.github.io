@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to checkout (on a forked repo) a Pull Request coming from the main repo? - 仲习的主页</title>
+
+  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+
+    <meta content="仲习的主页" property="og:site_name">
+  
+    <meta content="How to checkout (on a forked repo) a Pull Request coming from the main repo?" property="og:title">
+  
+  
+    <meta content="article" property="og:type">
+  
+  
+    <meta content="" property="og:description">
+  
+  
+    <meta content="http://localhost:4000/checkout-on-a-forked-repo-a-pr-coming-from-the-main-repo/" property="og:url">
+  
+  
+    <meta content="2017-11-12T00:00:00+08:00" property="article:published_time">
+    <meta content="http://localhost:4000/about/" property="article:author">
+  
+  
+    <meta content="http://localhost:4000/assets/img/git-logo.png" property="og:image">
+  
+  
+    
+  
+  
+    
+    <meta content="git" property="article:tag">
+    
+    <meta content="pull-request" property="article:tag">
+    
+  
+
+  
+    <meta name="twitter:card" content="">
+  
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+  
+    <meta name="twitter:title" content="How to checkout (on a forked repo) a Pull Request coming from the main repo?">
+  
+  
+    <meta name="twitter:url" content="http://localhost:4000/checkout-on-a-forked-repo-a-pr-coming-from-the-main-repo/">
+  
+  
+    <meta name="twitter:description" content="">
+  
+  
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/git-logo.png">
+  
+
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!-- Track all pages, according to https://desiredpersona.com/google-analytics-jekyll/ -->
+	
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/zhongxi.jpg" alt="谢仲习"></a>
+      </div>
+      <div class="author-name">谢仲习</div>
+      <p>iOS开发工程师,现居广州</p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+        
+        
+          <li class="github"><a href="http://github.com/XieXieZhongxi" target="_blank"><i class="fa fa-github"></i></a></li>
+        
+        
+        
+          <li class="email"><a href="mailto:xiezhongxi0525@foxmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; 谢仲习</p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/git-logo.png alt="How to checkout (on a forked repo) a Pull Request coming from the main repo?">
+    </div> <!-- End Page Cover Image -->
+    
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How to checkout (on a forked repo) a Pull Request coming from the main repo?</h1>
+        <div class="page-date"><span>2017, Nov 12&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h3 id="0-introduction">0. Introduction</h3>
+<p>By reading the <a href="https://stackoverflow.com/questions/47218516/how-to-checkout-on-a-forked-repo-a-pull-request-coming-from-the-main-repo">related question on StackOverflow</a>, you can get a very first understanding of today’s topic.</p>
+
+<h3 id="1-situation">1. Situation</h3>
+<p><a href="https://toubou91.github.io/hi-again/">As I mentioned in an earlier post</a>, I am using <a href="https://toubou91.github.io/hi-again/">flexible-jekyll</a> for this blog, which implies that I am working on the forked version of the main project from <a href="https://github.com/artemsheludko">artemsheludko</a>.
+So, I have <a href="https://github.com/artemsheludko/flexible-jekyll/issues/7">opened an issue on the main project</a>, regarding the possibilities of having post thumbnails for twitter, facebook, etc., which by the way, I find really important.
+<a href="https://github.com/kentonh">kentonh</a> <a href="https://github.com/artemsheludko/flexible-jekyll/pull/11">opened a pull request</a> which seemed to resolve this issue, so I really wanted to test this locally, because I couldn’t wait for at all 😋 🔜</p>
+
+<h3 id="2-solution">2. Solution</h3>
+<p>First, we check what we currently have:</p>
+
+<p><img src="/assets/img/11-11-17/1.png" alt="first" /></p>
+
+<p>We then have to add a new entry to map the parent project from Artem:</p>
+
+<p><img src="/assets/img/11-11-17/2.png" alt="second" /></p>
+
+<p>We should be good to go now:</p>
+
+<p><img src="/assets/img/11-11-17/3.png" alt="third" /></p>
+
+<p>Or <strong>NOT</strong>?</p>
+
+<p><img src="/assets/img/11-11-17/4.png" alt="fourth" /></p>
+
+<p>Of course NOT! Till now, what we have been doing, was only about managing branches.
+In order to be able to checkout a Pull Request, we have to add the following line, in our .git/config :</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>fetch <span class="o">=</span> +refs/pull/<span class="k">*</span>/head:refs/remotes/origin/pr/<span class="k">*</span>
+</code></pre>
+</div>
+
+<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span><span class="n">ssss</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>So, after that my upstream reference looks like this:</p>
+
+<p><img src="/assets/img/11-11-17/5.png" alt="fifth" /></p>
+
+<p>I should now be able to finally fetch the PR, right?</p>
+
+<p><img src="/assets/img/11-11-17/6.png" alt="sixth" /></p>
+
+<p>Yes, we got it!!!
+We should be able to check it out using this git command:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git checkout origin/pr/11
+</code></pre>
+</div>
+
+<p>Right?</p>
+
+<p><img src="/assets/img/11-11-17/7.png" alt="seventh" /></p>
+
+<p>YES!!!</p>
+
+<h3 id="3-closing-quote">3. Closing Quote</h3>
+<blockquote>
+  <p>If it hurts, do it more often.</p>
+</blockquote>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How to checkout (on a forked repo) a Pull Request coming from the main repo?&url=http://localhost:4000/checkout-on-a-forked-repo-a-pr-coming-from-the-main-repo/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/checkout-on-a-forked-repo-a-pr-coming-from-the-main-repo/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/checkout-on-a-forked-repo-a-pr-coming-from-the-main-repo/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+            <a href="/tags#git" class="tag">&#35; git</a>
+          
+            <a href="/tags#pull-request" class="tag">&#35; pull-request</a>
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//thodorisbais.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-108110726-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to solve LF would be replaced by CRLF - Thodoris Bais around Software and Life</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/" alt=""></a>
+      </div>
+      <div class="author-name"></div>
+      <p></p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:thodoris.bais@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; </p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ alt="How to solve LF would be replaced by CRLF">
+    </div> <!-- End Page Cover Image -->
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How to solve LF would be replaced by CRLF</h1>
+        <div class="page-date"><span>2014, Jan 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <div dir="ltr" style="text-align:left;">It's nearly to seven in the morning (new english expressions) and before going to bed, I would like to share this experience, as the most stuff that I found over the net wasn't very impressive to my tired eyes.<br /><div><br /></div><div>I today started dealing with github and git, although there have been months since I first created an account. </div><div>So, sometime, while trying to upload some files to a public repository of mine, I got the quoted message, displayed in the title.</div><div><br /></div><div>I tried to find a quick solution to stackoverflow, refering to the first hits of google, <a href="http://stackoverflow.com/questions/5834014/lf-will-be-replaced-by-crlf-in-git-what-is-that-and-is-it-important" target="_blank">here</a> and <a href="http://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf" target="_blank">here</a>, but while being in a rush, my eyes caught words like unix, etc., so I tried to found out by myself what was going on, because the exact error message, did also included the filename that was causing the error.</div><div><br /><span style="color:red;">EDIT</span>: Before continuing reading this, be sure that you tried the following command in the git shell:<br /><br /><pre class="brush:bash">git config core.autocrlf false<br /></pre></div><div><br />Opening the file was like a dream:</div><div><br /><ol><li>What I quickly understood in the fore-mentioned links, was what I exactly seeing in my file.</li><li>The little knowledge that I accomplished to acquire through this quick reading, made a light flash in my mind.</li></ol><div>The exact image was sth like this : </div></div><div class="separator" style="clear:both;text-align:center;"><a href="http://snag.gy/dLUn9.jpg" style="clear:left;float:left;margin-bottom:1em;margin-right:1em;"><img border="0" src="http://snag.gy/dLUn9.jpg" /></a><span style="color:#6fa8dc;">So, I just had to hit my Backspace button<br />and everything got as default; successful push<br />to github accomplished!</span></div><div class="separator" style="clear:both;"><span style="background-color:#f4cccc;">If the above wasn't enough and you countinue getting errors, try to open the specified file with Notepad++, go to <b>Edit</b> =&gt; <b>EOL Converion =&gt; Windows Format</b>.</span></div><div class="separator" style="clear:both;"><i><br /></i></div><div class="separator" style="clear:both;"><i>Dunno if this really helped you or it made your situation more difficult, but I thought about sharing it, 'cause newbies like me in github may find it useful.</i></div></div>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How to solve LF would be replaced by CRLF&url=http://localhost:4000/2014/01/30/how-to-solve-lf-would-be-replaced-by-crlf-git/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2014/01/30/how-to-solve-lf-would-be-replaced-by-crlf-git/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2014/01/30/how-to-solve-lf-would-be-replaced-by-crlf-git/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

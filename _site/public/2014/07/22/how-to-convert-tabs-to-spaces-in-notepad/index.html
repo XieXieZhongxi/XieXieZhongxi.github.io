@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to convert tabs to spaces in Notepad++ - Thodoris Bais around Software and Life</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/" alt=""></a>
+      </div>
+      <div class="author-name"></div>
+      <p></p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:thodoris.bais@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; </p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ alt="How to convert tabs to spaces in Notepad++">
+    </div> <!-- End Page Cover Image -->
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How to convert tabs to spaces in Notepad++</h1>
+        <div class="page-date"><span>2014, Jul 22&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <div dir="ltr" style="text-align:left;"><div dir="ltr" style="text-align:left;">So, the very first project that I was exposed on, as a professional, included, among others, <code>YAML</code> and as you obviously know <code>YAML</code> has a strict syntax.<br /><br />Notepad++ is till now, my favourite editor, but it comes without something that is very useful to the case that we 're investigating today, a "Tabs to Spaces" plugin/feature (I found that the one provided under the Edit -&gt; Blank Operations menu was missing basic functionality). </div><br />There is a solution, though, come  along!  <br /><div class="separator" style="clear:both;text-align:center;"><br /></div><ul><li>First of all, we have to download the <a href="http://sourceforge.net/projects/tabstospacesnpp/">plugin</a>.</li><li>We then copy the <code>CLRTabsToSpaces.dll</code> from the <code>.zip</code> file that we just downloaded into <code>\path\to\Notepad++\installation\plugins</code> folder.</li><li>If Notepad++ is open, we have to close it and restart it again, in order to let the software track the changes.</li><li>Navigating to the "Plugins" menu, we should see something like below:<br /><br /><a href="https://thodorisbais.files.wordpress.com/2014/07/2409d-screenshot.png" style="margin-left:1em;margin-right:1em;text-align:center;"><img border="0" src="https://thodorisbais.files.wordpress.com/2014/07/2409d-screenshot.png" height="132" width="400" /></a><br /></li></ul><div>That is, we have set properly our plugin, so to get it working, we just follow the above screenshot, to get the tab characters be converted into spaces.</div><div><br /></div><div><a href="https://thodorisbais.files.wordpress.com/2014/07/7335d-show_all_chars_button.png" style="clear:right;float:right;margin-bottom:1em;margin-left:1em;"><img border="0" src="https://thodorisbais.files.wordpress.com/2014/07/7335d-show_all_chars_button.png" /></a><span style="color:red;">Note</span>: it's better to edit such code snippets, having enabled the "Show all characters" button: </div><div><br /></div><div><i>And a small example (sample code from <a href="http://www.liquibase.org/documentation/yaml_format.html" target="_blank">here</a> ):</i></div><div><i><br /></i></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left:auto;margin-right:auto;text-align:center;"><tbody><tr><td style="text-align:center;"><a href="https://thodorisbais.files.wordpress.com/2014/07/256ea-before.png" style="margin-left:auto;margin-right:auto;"><img border="0" src="https://thodorisbais.files.wordpress.com/2014/07/256ea-before.png" height="150" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align:center;">Before applying the plugin.</td></tr></tbody></table><div><i><br /></i></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left:auto;margin-right:auto;text-align:center;"><tbody><tr><td style="text-align:center;"><a href="https://thodorisbais.files.wordpress.com/2014/07/ad97c-after.png" style="margin-left:auto;margin-right:auto;"><img border="0" src="https://thodorisbais.files.wordpress.com/2014/07/ad97c-after.png" height="164" width="320" /></a></td></tr><tr><td class="tr-caption" style="text-align:center;">After applying the plugin.</td></tr></tbody></table><div><i><br /></i></div><div><i><br /></i></div><div>Cheers!</div><div><br /></div><div><br /></div></div>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How to convert tabs to spaces in Notepad++&url=http://localhost:4000/2014/07/22/how-to-convert-tabs-to-spaces-in-notepad/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2014/07/22/how-to-convert-tabs-to-spaces-in-notepad/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2014/07/22/how-to-convert-tabs-to-spaces-in-notepad/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

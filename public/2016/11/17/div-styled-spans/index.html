@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>div styled spans - Thodoris Bais around Software and Life</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/" alt=""></a>
+      </div>
+      <div class="author-name"></div>
+      <p></p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:thodoris.bais@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; </p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ alt="div styled spans">
+    </div> <!-- End Page Cover Image -->
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">div styled spans</h1>
+        <div class="page-date"><span>2016, Nov 17&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <h1>Situation</h1>
+<p>Someone is totally amateur to front-end stuff, but likes a lot this totally new process of learning.</p>
+
+<p>I am in React and I wanna create a small header-like thingy, without using any <code>table</code> tag. 
+So, only divs, but wouldn’t it be better just for readability purposes to use a <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/span"><code class="highlighter-rouge">span</code></a> for every header itself and then wrap them all together around a <code>div</code> ?</p>
+
+<p>Yeah, better, so, I end up like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span> 
+  <span class="nt">&lt;span&gt;</span>Header 1<span class="nt">&lt;/span&gt;</span> 
+  <span class="nt">&lt;span&gt;</span>Header 2<span class="nt">&lt;/span&gt;</span> 
+  <span class="nt">&lt;span&gt;</span>Header 3<span class="nt">&lt;/span&gt;</span> 
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Of course, I have a CSS like below for my spans:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">span</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">30%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Correct? Could be, if <code class="highlighter-rouge">&lt;span&gt;</code> wasn’t an inline container.
+That is, this one will just ignore the specified <code class="highlighter-rouge">width</code> in our css file and place every <code class="highlighter-rouge">span</code> next to each other.
+What about mimicing the behavior of a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><code class="highlighter-rouge">div</code></a>?</p>
+
+<p>Yeah, inline-block!</p>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="bBBKed" data-default-tab="html,result" data-user="toubou91" data-embed-version="2" data-pen-title="bBBKed" class="codepen">See the Pen <a href="https://codepen.io/toubou91/pen/bBBKed/">bBBKed</a> by Thodoris Bais (<a href="http://codepen.io/toubou91">@toubou91</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h4>Closing Quote</h4>
+<blockquote>
+  <p>Mistakes are for braves.</p>
+</blockquote>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=div styled spans&url=http://localhost:4000/2016/11/17/div-styled-spans/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2016/11/17/div-styled-spans/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2016/11/17/div-styled-spans/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

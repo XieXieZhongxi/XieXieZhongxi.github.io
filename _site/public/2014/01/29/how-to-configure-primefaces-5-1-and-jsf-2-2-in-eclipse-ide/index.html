@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>How to configure Primefaces 5.1 and JSF 2.2 in Eclipse IDE - Thodoris Bais around Software and Life</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#263959">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#263959">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <aside class="sidebar">
+  <header>
+    <div class="about">
+      <div class="cover-author-image">
+        <a href="/"><img src="/assets/img/" alt=""></a>
+      </div>
+      <div class="author-name"></div>
+      <p></p>
+    </div>
+  </header> <!-- End Header -->
+  <footer>
+    <section class="contact">
+      <h3 class="contact-title">Contact me</h3>
+      <ul>
+        
+          <li><a href="https://twitter.com/artemsheludko_" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        
+        
+          <li><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="github"><a href="http://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="linkedin"><a href="https://in.linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        
+        
+          <li class="email"><a href="mailto:thodoris.bais@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+        
+      </ul>
+    </section> <!-- End Section Contact -->
+    <div class="copyright">
+      <p>2017 &copy; </p>
+    </div>
+  </footer> <!-- End Footer -->
+</aside> <!-- End Sidebar -->
+<div class="content-box clearfix">
+  <article class="article-page">
+  <div class="page-content">
+    <div class="page-cover-image">
+      <img class="page-image" src=/assets/img/ alt="How to configure Primefaces 5.1 and JSF 2.2 in Eclipse IDE">
+    </div> <!-- End Page Cover Image -->
+    <div class="wrap-content">
+      <header class="header-page">
+        <h1 class="page-title">How to configure Primefaces 5.1 and JSF 2.2 in Eclipse IDE</h1>
+        <div class="page-date"><span>2014, Jan 29&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+      </header>
+      <div dir="ltr" style="text-align:left;">Hi there!<br /><div><br /></div><div>Today I will show you how to configure Primefaces 4.0 with JSF 2.2 in the Eclipse Kepler IDE (v4.3).<br /><br />If you don't have any idea of what we 're talking about or it's the first time that you 're facing J2EE, you may find interesting my first two articles about JSF 2.0 and Eclipse integration, in JCG community : <br /><ol style="text-align:left;"><li><a href="http://examples.javacodegeeks.com/enterprise-java/jsf-2-0-eclipse-ide-support/" target="_blank">JSF 2.0 Eclipse IDE Support</a></li><li><a href="http://examples.javacodegeeks.com/enterprise-java/hello-world-example-with-jsf-2-0/" target="_blank">Hello World Example with JSF 2.0</a></li></ol><div>Now that you 're enough experienced, let's link Primefaces with JSF and Eclipse, too. There are two main actions that we need to no, in order to implement this:<br /><br />We first need to add the following dependency, in the <code>pom.xml</code> file: <br /><br /><pre class="brush:xml"><br />   org.primefaces<br />   primefaces<br />   5.1<br /><br /></pre><br />We 're pretty ready! Naaah, don't be in a rush. As you might found out by yourself, Primefaces deals with the visual components of our websites, so obviously, the <code>xhtml</code> reference that we provided (in the fore-mentioned links/articles) isn't enough; we need to add two more references, in order to get the Primefaces up and running:<br /><br /><div class="separator" style="clear:both;text-align:center;"></div><pre class="brush:xml; highlight:[4]">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;    <br />      xmlns:h="http://java.sun.com/jsf/html"<br />      xmlns:f="http://java.sun.com/jsf/core"<br />      xmlns:p="http://primefaces.org/ui" &gt;<br /></pre><br />That was it. You 're ready to start developing your awesome look-and-feel web applications with JSF and Primefaces.<br /><br /><h4 style="text-align:left;"><span style="background-color:white;color:#76a5af;">I also created a simple <a href="https://gist.github.com/toubou91/c29acbcab4c63a25af4a" target="_blank"><span style="color:red;">gist</span></a><span style="color:#76a5af;"> for the purpose of this configuration.</span><i> </i>&lt;/h4&gt;&lt;/div&gt;&lt;/div&gt;<br /><div>Cheers!</div>&lt;/div&gt;
+</span></h4></div></div></div>
+
+      <div class="page-footer">
+        <div class="page-share">
+          <a href="https://twitter.com/intent/tweet?text=How to configure Primefaces 5.1 and JSF 2.2 in Eclipse IDE&url=http://localhost:4000/2014/01/29/how-to-configure-primefaces-5-1-and-jsf-2-2-in-eclipse-ide/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/2014/01/29/how-to-configure-primefaces-5-1-and-jsf-2-2-in-eclipse-ide/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/2014/01/29/how-to-configure-primefaces-5-1-and-jsf-2-2-in-eclipse-ide/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+        </div>
+        <div class="page-tag">
+          
+        </div>
+      </div>
+      <section class="comment-area">
+  <div class="comment-wrapper">
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+    </div> <!-- End Wrap Content -->
+  </div> <!-- End Page Content -->
+</article> <!-- End Article Page -->
+
+</div>
+
+  </div>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
