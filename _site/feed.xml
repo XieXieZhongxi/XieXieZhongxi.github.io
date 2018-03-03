@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nelson</title>
+    <title>仲习的博客</title>
     <description>iOS技术杂谈</description>
-    <link>http://localhost:4000/jekyll-uno/</link>
-    <atom:link href="http://localhost:4000/jekyll-uno/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 03 Mar 2018 15:07:26 +0800</pubDate>
-    <lastBuildDate>Sat, 03 Mar 2018 15:07:26 +0800</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 03 Mar 2018 18:16:59 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Mar 2018 18:16:59 +0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -77,8 +77,8 @@
 
 </description>
         <pubDate>Wed, 13 Dec 2017 02:21:23 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/Charles-4-2-1-HTTPS%E6%8A%93%E5%8C%85/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/Charles-4-2-1-HTTPS%E6%8A%93%E5%8C%85/</guid>
+        <link>http://localhost:4000/2017/Charles-4-2-1-HTTPS%E6%8A%93%E5%8C%85/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/Charles-4-2-1-HTTPS%E6%8A%93%E5%8C%85/</guid>
         
         <category>Charles</category>
         
@@ -143,8 +143,8 @@
 
 </description>
         <pubDate>Tue, 05 Dec 2017 23:49:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/OpenSimulator-%E5%BF%AB%E6%8D%B7%E6%89%93%E5%BC%80%E6%A8%A1%E6%8B%9F%E5%99%A8-%E7%9C%9F%E6%9C%BA%E6%B2%99%E7%9B%92%E6%96%87%E4%BB%B6/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/OpenSimulator-%E5%BF%AB%E6%8D%B7%E6%89%93%E5%BC%80%E6%A8%A1%E6%8B%9F%E5%99%A8-%E7%9C%9F%E6%9C%BA%E6%B2%99%E7%9B%92%E6%96%87%E4%BB%B6/</guid>
+        <link>http://localhost:4000/2017/OpenSimulator-%E5%BF%AB%E6%8D%B7%E6%89%93%E5%BC%80%E6%A8%A1%E6%8B%9F%E5%99%A8-%E7%9C%9F%E6%9C%BA%E6%B2%99%E7%9B%92%E6%96%87%E4%BB%B6/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/OpenSimulator-%E5%BF%AB%E6%8D%B7%E6%89%93%E5%BC%80%E6%A8%A1%E6%8B%9F%E5%99%A8-%E7%9C%9F%E6%9C%BA%E6%B2%99%E7%9B%92%E6%96%87%E4%BB%B6/</guid>
         
         <category>macOS</category>
         
@@ -225,8 +225,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 02 Dec 2017 00:02:00 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/iCok-%E6%97%A0%E9%9C%80%E5%AE%98%E6%96%B9SDK%E5%AE%9E%E7%8E%B0%E6%8E%88%E6%9D%83-%E5%88%86%E4%BA%AB/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/iCok-%E6%97%A0%E9%9C%80%E5%AE%98%E6%96%B9SDK%E5%AE%9E%E7%8E%B0%E6%8E%88%E6%9D%83-%E5%88%86%E4%BA%AB/</guid>
+        <link>http://localhost:4000/2017/iCok-%E6%97%A0%E9%9C%80%E5%AE%98%E6%96%B9SDK%E5%AE%9E%E7%8E%B0%E6%8E%88%E6%9D%83-%E5%88%86%E4%BA%AB/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/iCok-%E6%97%A0%E9%9C%80%E5%AE%98%E6%96%B9SDK%E5%AE%9E%E7%8E%B0%E6%8E%88%E6%9D%83-%E5%88%86%E4%BA%AB/</guid>
         
         <category>SDK</category>
         
@@ -238,6 +238,7 @@
       <item>
         <title>ssh无密码登录</title>
         <description>&lt;p&gt;执行&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen -t rsa&lt;/code&gt;命令行生成公钥、密钥,需要交互输入的直接回车键&lt;/p&gt;
+
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Nelson&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:~&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Nelson&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keygen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rsa&lt;/span&gt;
 &lt;span class=&quot;no&quot;&gt;Generating&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/private rsa key pair.
 Enter file in which to save the key (/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Users&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;freegeek&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;ssh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id_rsa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; 
@@ -277,8 +278,8 @@ Nelson-iPad:~ root#
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 18 Aug 2017 01:47:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</guid>
+        <link>http://localhost:4000/2017/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/ssh%E6%97%A0%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95/</guid>
         
         <category>越狱</category>
         
@@ -469,8 +470,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 
 </description>
         <pubDate>Fri, 18 Aug 2017 01:19:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/debugserver-+-lldb-%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/debugserver-+-lldb-%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/</guid>
+        <link>http://localhost:4000/2017/debugserver-+-lldb-%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/debugserver-+-lldb-%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/</guid>
         
         <category>越狱</category>
         
@@ -514,8 +515,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 17 Aug 2017 01:32:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/iOS%E8%B6%8A%E7%8B%B1%E8%AE%BE%E5%A4%87%E8%8E%B7%E5%8F%96keyChain%E6%95%B0%E6%8D%AE/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/iOS%E8%B6%8A%E7%8B%B1%E8%AE%BE%E5%A4%87%E8%8E%B7%E5%8F%96keyChain%E6%95%B0%E6%8D%AE/</guid>
+        <link>http://localhost:4000/2017/iOS%E8%B6%8A%E7%8B%B1%E8%AE%BE%E5%A4%87%E8%8E%B7%E5%8F%96keyChain%E6%95%B0%E6%8D%AE/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/iOS%E8%B6%8A%E7%8B%B1%E8%AE%BE%E5%A4%87%E8%8E%B7%E5%8F%96keyChain%E6%95%B0%E6%8D%AE/</guid>
         
         <category>越狱</category>
         
@@ -700,8 +701,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 当然,注入了dylib,ipa需要进行重签名&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 May 2017 01:15:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/iPA%E6%B3%A8%E5%85%A5%E5%8A%A8%E6%80%81%E5%BA%93dylib/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/iPA%E6%B3%A8%E5%85%A5%E5%8A%A8%E6%80%81%E5%BA%93dylib/</guid>
+        <link>http://localhost:4000/2017/iPA%E6%B3%A8%E5%85%A5%E5%8A%A8%E6%80%81%E5%BA%93dylib/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/iPA%E6%B3%A8%E5%85%A5%E5%8A%A8%E6%80%81%E5%BA%93dylib/</guid>
         
         <category>越狱</category>
         
@@ -762,8 +763,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 
 </description>
         <pubDate>Sat, 21 Jan 2017 00:28:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/macOS-NSStatusBar-+-NSPopover/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/macOS-NSStatusBar-+-NSPopover/</guid>
+        <link>http://localhost:4000/2017/macOS-NSStatusBar-+-NSPopover/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/macOS-NSStatusBar-+-NSPopover/</guid>
         
         <category>macOS</category>
         
@@ -813,8 +814,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 20 Jan 2017 23:25:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2017/macOS-IKPictureTaker-%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2017/macOS-IKPictureTaker-%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8/</guid>
+        <link>http://localhost:4000/2017/macOS-IKPictureTaker-%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/macOS-IKPictureTaker-%E5%9B%BE%E7%89%87%E9%80%89%E6%8B%A9%E5%99%A8/</guid>
         
         <category>macOS</category>
         
@@ -937,8 +938,8 @@ libsystem_kernel.dylib`&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;mach_msg_ov
 &lt;p&gt;End.&lt;/p&gt;
 </description>
         <pubDate>Tue, 21 Apr 2015 01:44:25 +0800</pubDate>
-        <link>http://localhost:4000/jekyll-uno/2015/IOS%E5%A4%9A%E7%BA%BF%E7%A8%8BGCD/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-uno/2015/IOS%E5%A4%9A%E7%BA%BF%E7%A8%8BGCD/</guid>
+        <link>http://localhost:4000/2015/IOS%E5%A4%9A%E7%BA%BF%E7%A8%8BGCD/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/IOS%E5%A4%9A%E7%BA%BF%E7%A8%8BGCD/</guid>
         
         <category>GCD</category>
         

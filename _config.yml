@@ -1,5 +1,5 @@
 # Site settings
-title: Nelson
+title: '仲习的博客'
 description: 'iOS技术杂谈'
 # url: 'http://joshgerdes.com/jekyll-uno'
 url: 'http://xiezhongxi.com'
@@ -9,7 +9,7 @@ baseurl:
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'Nelson'
+  name: '谢仲习'
   email: xiezhongxi0525@foxmail.com
   twitter_username: 
   facebook_username: 
