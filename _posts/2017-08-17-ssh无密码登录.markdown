@@ -7,6 +7,7 @@ tags: [越狱,ssh]
 
 
 执行`ssh-keygen -t rsa`命令行生成公钥、密钥,需要交互输入的直接回车键
+
 ``` ruby
 Nelson:~ Nelson$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
