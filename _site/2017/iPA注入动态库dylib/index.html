@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>iPA注入动态库dylib</title>
+  <meta name="description" content="yololib
+
+">
+  <meta name="author" content="Nelson">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iPA注入动态库dylib">
+  <meta name="twitter:description" content="yololib
+
+">
+  
+  <meta name="twitter:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iPA注入动态库dylib">
+  <meta property="og:description" content="yololib
+
+">
+  <meta property="og:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/jekyll-uno/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/jekyll-uno/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/jekyll-uno/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/jekyll-uno/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/jekyll-uno/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/jekyll-uno/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/jekyll-uno/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/jekyll-uno/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jekyll-uno/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/jekyll-uno/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/jekyll-uno/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/jekyll-uno/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/jekyll-uno/css/main.css?1520060846071679000">
+  <link rel="canonical" href="http://localhost:4000/jekyll-uno/2017/iPA%E6%B3%A8%E5%85%A5%E5%8A%A8%E6%80%81%E5%BA%93dylib/">
+  <link rel="alternate" type="application/rss+xml" title="Nelson" href="/jekyll-uno/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/jekyll-uno/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/jekyll-uno/" title="link to home of Nelson">
+          <img src="/jekyll-uno/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Nelson</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">iOS技术杂谈</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/jekyll-uno/#blog" title="link to Nelson blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/XieXieZhongxi" title="XieXieZhongxi on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:xiezhongxi0525@foxmail.com" title="Email xiezhongxi0525@foxmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/jekyll-uno/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-05-08 17:15" class="post-meta__date date">8 May 2017</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/jekyll-uno/tags/#越狱">越狱</a> <a href="/jekyll-uno/tags/#动态库">动态库</a> <a href="/jekyll-uno/tags/#dylib">dylib</a> </span>
+      
+    </div>
+    <h2 class="post-title">iPA注入动态库dylib</h2>
+  </header>
+
+  <section class="post">
+    <p><a href="https://github.com/KJCracks/yololib">yololib</a></p>
+
+<p>实现了使用终端将dylib注入到ipa,当我们编写Mac端工具的时候也可以调用<a href="https://github.com/XieXieZhongxi/AsyncTask">NSTask</a>执行终端,然而为了简单化,这里使用了纯代码的方式.</p>
+
+<p><a href="https://github.com/gdbinit/MachOView">MachOView</a></p>
+
+<p>打开<code class="highlighter-rouge">xxx.app/exec</code>文件的时候可以看到所有库的加载路径,注入dylib文件其实也就是在exec文件中添加一条dylib加载路径</p>
+
+<p><code class="highlighter-rouge">otool</code>命令行同样可以查看到<code class="highlighter-rouge">xxx.app/exec</code>文件库的加载路径</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">otool</span> <span class="o">-</span><span class="no">L</span> <span class="n">xxx</span><span class="p">.</span><span class="nf">app</span><span class="o">/</span><span class="nb">exec</span>
+</code></pre></div></div>
+<p><a href="https://github.com/XieXieZhongxi/NEInjector/blob/master/NEInjector.h">NEInjector.h</a></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">injectMachoPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">machoPath</span> <span class="n">dylibPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">dylibPath</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><a href="https://github.com/XieXieZhongxi/NEInjector/blob/master/NEInjector.m">NEInjector.mm</a></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#include &lt;mach-o/loader.h&gt;</span>
+<span class="c1">#include &lt;mach-o/fat.h&gt;</span>
+<span class="o">+</span><span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">injectMachoPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">machoPath</span> <span class="n">dylibPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">dylibPath</span><span class="p">{</span>
+    <span class="n">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">machoPath</span><span class="o">.</span><span class="no">UTF8String</span><span class="p">,</span> <span class="no">O_RDWR</span><span class="p">,</span> <span class="mo">0777</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"Inject failed: failed to open %@"</span><span class="p">,</span><span class="n">machoPath</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">uint32_t</span> <span class="n">magic</span><span class="p">;</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">magic</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">magic</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">magic</span> <span class="o">==</span> <span class="no">MH_MAGIC</span> <span class="o">||</span> <span class="n">magic</span> <span class="o">==</span> <span class="no">MH_MAGIC_64</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="no">SEEK_SET</span><span class="p">);</span>
+            <span class="p">[</span><span class="nb">self</span> <span class="n">injectArchitecture</span><span class="ss">:fd</span> <span class="n">dylibPath</span><span class="ss">:dylibPath</span> <span class="n">exePath</span><span class="ss">:machoPath</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">magic</span> <span class="o">==</span> <span class="no">FAT_MAGIC</span> <span class="o">||</span> <span class="n">magic</span> <span class="o">==</span> <span class="no">FAT_CIGAM</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">struct</span> <span class="n">fat_header</span> <span class="n">header</span><span class="p">;</span>
+            <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="no">SEEK_SET</span><span class="p">);</span>
+            <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">fat_header</span><span class="p">));</span>
+            <span class="n">int</span> <span class="n">nArch</span> <span class="o">=</span> <span class="n">header</span><span class="p">.</span><span class="nf">nfat_arch</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">magic</span> <span class="o">==</span> <span class="no">FAT_CIGAM</span><span class="p">)</span> <span class="n">nArch</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">bigEndianToSmallEndian</span><span class="ss">:header</span><span class="p">.</span><span class="nf">nfat_arch</span><span class="p">];</span>
+            
+            <span class="n">struct</span> <span class="n">fat_arch</span> <span class="n">arch</span><span class="p">;</span>
+            <span class="no">NSMutableArray</span> <span class="o">*</span><span class="n">offsetArray</span> <span class="o">=</span> <span class="p">[</span><span class="no">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nArch</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arch</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">fat_arch</span><span class="p">));</span>
+                <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arch</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">fat_arch</span><span class="p">));</span>
+                <span class="n">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="n">arch</span><span class="p">.</span><span class="nf">offset</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">magic</span> <span class="o">==</span> <span class="no">FAT_CIGAM</span><span class="p">)</span> <span class="n">offset</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="n">bigEndianToSmallEndian</span><span class="ss">:arch</span><span class="p">.</span><span class="nf">offset</span><span class="p">];</span>
+                <span class="p">[</span><span class="n">offsetArray</span> <span class="n">addObject</span><span class="p">:[</span><span class="no">NSNumber</span> <span class="n">numberWithUnsignedInt</span><span class="ss">:offset</span><span class="p">]];</span>
+            <span class="p">}</span>
+            
+            <span class="k">for</span> <span class="p">(</span><span class="no">NSNumber</span> <span class="o">*</span><span class="n">offsetNum</span> <span class="k">in</span> <span class="n">offsetArray</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="p">[</span><span class="n">offsetNum</span> <span class="n">unsignedIntValue</span><span class="p">],</span> <span class="no">SEEK_SET</span><span class="p">);</span>
+                <span class="p">[</span><span class="nb">self</span> <span class="n">injectArchitecture</span><span class="ss">:fd</span> <span class="n">dylibPath</span><span class="ss">:dylibPath</span> <span class="n">exePath</span><span class="ss">:machoPath</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">+</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">injectArchitecture</span><span class="p">:(</span><span class="n">int</span><span class="p">)</span><span class="n">fd</span> <span class="n">dylibPath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">dylibPath</span> <span class="n">exePath</span><span class="p">:(</span><span class="no">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">exePathForInfoOnly</span>
+<span class="p">{</span>
+    <span class="n">off_t</span> <span class="n">archPoint</span> <span class="o">=</span> <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="no">SEEK_CUR</span><span class="p">);</span>
+    <span class="n">struct</span> <span class="n">mach_header</span> <span class="n">header</span><span class="p">;</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">header</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="nf">magic</span> <span class="o">!=</span> <span class="no">MH_MAGIC</span> <span class="o">&amp;&amp;</span> <span class="n">header</span><span class="p">.</span><span class="nf">magic</span> <span class="o">!=</span> <span class="no">MH_MAGIC_64</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"Inject failed: Invalid executable %@"</span><span class="p">,</span><span class="n">exePathForInfoOnly</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="nf">magic</span> <span class="o">==</span> <span class="no">MH_MAGIC_64</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">int</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">mach_header_64</span><span class="p">)</span> <span class="o">-</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">mach_header</span><span class="p">);</span>
+            <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">delta</span><span class="p">,</span> <span class="no">SEEK_CUR</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="n">char</span> <span class="o">*</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span> <span class="o">+</span> <span class="mi">2048</span><span class="p">);</span>
+        <span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span><span class="p">);</span>
+        
+        <span class="k">if</span> <span class="p">([[</span><span class="no">NSFileManager</span> <span class="n">defaultManager</span><span class="p">]</span> <span class="n">fileExistsAtPath</span><span class="ss">:dylibPath</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="n">dylibPath</span> <span class="o">=</span> <span class="p">[</span><span class="err">@</span><span class="s2">"@executable_path"</span> <span class="n">stringByAppendingPathComponent</span><span class="p">:[</span><span class="n">dylibPath</span> <span class="n">lastPathComponent</span><span class="p">]];</span>
+        <span class="p">}</span>
+        <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">dylib</span> <span class="o">=</span> <span class="n">dylibPath</span><span class="o">.</span><span class="no">UTF8String</span><span class="p">;</span>
+        <span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="nb">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="p">)</span><span class="n">buffer</span><span class="p">;</span>
+        <span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="n">last</span> <span class="o">=</span> <span class="no">NULL</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">uint32_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">header</span><span class="p">.</span><span class="nf">ncmds</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="nb">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="p">)((</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="nb">p</span> <span class="o">+</span> <span class="nb">p</span><span class="o">-&gt;</span><span class="n">cmdsize</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">p</span><span class="o">-&gt;</span><span class="n">cmd</span> <span class="o">==</span> <span class="no">LC_LOAD_DYLIB</span> <span class="o">||</span> <span class="nb">p</span><span class="o">-&gt;</span><span class="n">cmd</span> <span class="o">==</span> <span class="no">LC_LOAD_WEAK_DYLIB</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">char</span> <span class="o">*</span><span class="nb">name</span> <span class="o">=</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="nb">p</span> <span class="o">+</span> <span class="nb">p</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">name</span><span class="p">.</span><span class="nf">offset</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">dylib</span><span class="p">,</span> <span class="nb">name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"Already Injected: %@ with %s"</span><span class="p">,</span> <span class="n">exePathForInfoOnly</span><span class="p">,</span> <span class="n">dylib</span><span class="p">);</span>
+                    <span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">last</span> <span class="o">=</span> <span class="nb">p</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">((</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="nb">p</span> <span class="o">-</span> <span class="n">buffer</span> <span class="o">!=</span> <span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"LC payload not mismatch: %@"</span><span class="p">,</span> <span class="n">exePathForInfoOnly</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">last</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="n">inject</span> <span class="o">=</span> <span class="p">(</span><span class="n">struct</span> <span class="n">dylib_command</span> <span class="o">*</span><span class="p">)((</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">last</span> <span class="o">+</span> <span class="n">last</span><span class="o">-&gt;</span><span class="n">cmdsize</span><span class="p">);</span>
+            <span class="n">char</span> <span class="o">*</span><span class="n">movefrom</span> <span class="o">=</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">inject</span><span class="p">;</span>
+            <span class="n">uint32_t</span> <span class="n">cmdsize</span> <span class="o">=</span> <span class="n">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">inject</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">uint32_t</span><span class="p">)</span><span class="n">strlen</span><span class="p">(</span><span class="n">dylib</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="n">cmdsize</span> <span class="o">=</span> <span class="p">(</span><span class="n">cmdsize</span> <span class="o">+</span> <span class="mh">0x10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFFFFFFF0</span><span class="p">;</span>
+            <span class="n">char</span> <span class="o">*</span><span class="n">moveout</span> <span class="o">=</span> <span class="p">(</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">inject</span> <span class="o">+</span> <span class="n">cmdsize</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">int</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">int</span><span class="p">)(</span><span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span> <span class="o">-</span> <span class="p">(</span><span class="n">movefrom</span> <span class="o">-</span> <span class="n">buffer</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">moveout</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">movefrom</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="n">memset</span><span class="p">(</span><span class="n">inject</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">cmdsize</span><span class="p">);</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">cmd</span> <span class="o">=</span> <span class="no">LC_LOAD_DYLIB</span><span class="p">;</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">cmdsize</span> <span class="o">=</span> <span class="n">cmdsize</span><span class="p">;</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">name</span><span class="p">.</span><span class="nf">offset</span> <span class="o">=</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">dylib_command</span><span class="p">);</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">timestamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">current_version</span> <span class="o">=</span> <span class="mh">0x00010000</span><span class="p">;</span>
+            <span class="n">inject</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">compatibility_version</span> <span class="o">=</span> <span class="mh">0x00010000</span><span class="p">;</span>
+            <span class="n">strcpy</span><span class="p">((</span><span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="n">inject</span> <span class="o">+</span> <span class="n">inject</span><span class="o">-&gt;</span><span class="n">dylib</span><span class="p">.</span><span class="nf">name</span><span class="p">.</span><span class="nf">offset</span><span class="p">,</span> <span class="n">dylib</span><span class="p">);</span>
+            
+            <span class="n">header</span><span class="p">.</span><span class="nf">ncmds</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span> <span class="o">+=</span> <span class="n">inject</span><span class="o">-&gt;</span><span class="n">cmdsize</span><span class="p">;</span>
+            <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">archPoint</span><span class="p">,</span> <span class="no">SEEK_SET</span><span class="p">);</span>
+            <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">,</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">header</span><span class="p">));</span>
+            
+            <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">archPoint</span> <span class="o">+</span> <span class="p">((</span><span class="n">header</span><span class="p">.</span><span class="nf">magic</span> <span class="o">==</span> <span class="no">MH_MAGIC_64</span><span class="p">)</span> <span class="p">?</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">mach_header_64</span><span class="p">)</span> <span class="p">:</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">mach_header</span><span class="p">)),</span> <span class="no">SEEK_SET</span><span class="p">);</span>
+            <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">header</span><span class="p">.</span><span class="nf">sizeofcmds</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"nject failed: No valid LC_LOAD_DYLIB %@"</span><span class="p">,</span><span class="n">exePathForInfoOnly</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">+</span> <span class="p">(</span><span class="n">uint32_t</span><span class="p">)</span><span class="n">bigEndianToSmallEndian</span><span class="p">:(</span><span class="n">uint32_t</span><span class="p">)</span><span class="n">bigEndian</span>
+<span class="p">{</span>
+    <span class="n">uint32_t</span> <span class="n">smallEndian</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">small</span> <span class="o">=</span> <span class="p">(</span><span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">smallEndian</span><span class="p">;</span>
+    <span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="n">big</span> <span class="o">=</span> <span class="p">(</span><span class="n">unsigned</span> <span class="n">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">bigEndian</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">small</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">big</span><span class="p">[</span><span class="mi">3</span><span class="o">-</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">smallEndian</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>使用</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="no">NEInjector</span> <span class="n">injectMachoPath</span><span class="p">:</span><span class="err">@</span><span class="s2">"~.xxx/Payload/xxx.app/machoFileName"</span> <span class="n">dylibPath</span><span class="p">:</span><span class="err">@</span><span class="s2">"~.xxx/Payload/xxx.app/xxxx.dylib"</span><span class="p">];</span>
+</code></pre></div></div>
+<h4 id="后续">后续</h4>
+
+<p>当我们从xxxx助手下载的无限金币游戏ipa的时候,必定会存在以这种方式存在的启动广告.
+使用<code class="highlighter-rouge">install_name_tool</code> 终端命令行进行替换,例如ipa原有dylib文件名称为<code class="highlighter-rouge">xx.dylib</code>,需要注入的为<code class="highlighter-rouge">NE.dylib</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vg">$install_name_tool</span> <span class="o">-</span><span class="n">change</span> <span class="vi">@executable_path</span><span class="o">/</span><span class="n">xx</span><span class="p">.</span><span class="nf">dylib</span> <span class="vi">@executable_path</span><span class="o">/</span><span class="no">NE</span><span class="p">.</span><span class="nf">dylib</span> <span class="o">~</span><span class="sr">/xxxx.app/exe</span><span class="n">c</span>
+</code></pre></div></div>
+<p>执行成功后使用文中开头的方法把<code class="highlighter-rouge">NE.dylib</code>注入
+当然,注入了dylib,ipa需要进行重签名</p>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Nelson. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/jekyll-uno/js/main.js?1520060846071679000"></script>
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>Charles 4.2.1 HTTPS抓包</title>
+  <meta name="description" content="
+	
+
+Charles
+
+">
+  <meta name="author" content="Nelson">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Charles 4.2.1 HTTPS抓包">
+  <meta name="twitter:description" content="
+	
+
+Charles
+
+">
+  
+  <meta name="twitter:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Charles 4.2.1 HTTPS抓包">
+  <meta property="og:description" content="
+	
+
+Charles
+
+">
+  <meta property="og:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/jekyll-uno/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/jekyll-uno/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/jekyll-uno/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/jekyll-uno/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/jekyll-uno/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/jekyll-uno/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/jekyll-uno/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/jekyll-uno/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jekyll-uno/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/jekyll-uno/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/jekyll-uno/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/jekyll-uno/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/jekyll-uno/css/main.css?1520060846071679000">
+  <link rel="canonical" href="http://localhost:4000/jekyll-uno/2017/Charles-4-2-1-HTTPS%E6%8A%93%E5%8C%85/">
+  <link rel="alternate" type="application/rss+xml" title="Nelson" href="/jekyll-uno/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/jekyll-uno/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/jekyll-uno/" title="link to home of Nelson">
+          <img src="/jekyll-uno/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Nelson</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">iOS技术杂谈</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/jekyll-uno/#blog" title="link to Nelson blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/XieXieZhongxi" title="XieXieZhongxi on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:xiezhongxi0525@foxmail.com" title="Email xiezhongxi0525@foxmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/jekyll-uno/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-12-12 18:21" class="post-meta__date date">12 Dec 2017</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/jekyll-uno/tags/#Charles">Charles</a> <a href="/jekyll-uno/tags/#HTTPS">HTTPS</a> </span>
+      
+    </div>
+    <h2 class="post-title">Charles 4.2.1 HTTPS抓包</h2>
+  </header>
+
+  <section class="post">
+    <div align="center">
+	<img src="http://upload-images.jianshu.io/upload_images/4048192-12cf0cd7b90f5ca1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/658" style="zoom:50%" />
+</div>
+<p><a href="https://www.charlesproxy.com">Charles</a></p>
+
+<h4 id="iphone抓包">iPhone抓包</h4>
+<p><code class="highlighter-rouge">Mac</code>必须与<code class="highlighter-rouge">iPhone</code>连接同一<code class="highlighter-rouge">WiFi</code></p>
+
+<p><code class="highlighter-rouge">Proxy</code> -&gt; <code class="highlighter-rouge">SSL Proxying Settings</code> -&gt; <code class="highlighter-rouge">SSL Proxying</code> -&gt; <code class="highlighter-rouge">Add</code></p>
+
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-654fed64b49cec91.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<ul>
+  <li>Host:为需要过滤的域名地址,<code class="highlighter-rouge">*</code> 表示不过滤</li>
+  <li>Port:固定为<code class="highlighter-rouge">443</code>,<code class="highlighter-rouge">*</code>表示任意端口</li>
+</ul>
+
+<p>查看Mac <code class="highlighter-rouge">IP</code>地址,iPhone添加代理</p>
+
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-f9123bd3d8b76fdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+<!-- <img src="http://upload-images.jianshu.io/upload_images/336727-2e161f7384fda365.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:25%" /> -->
+</div>
+
+<p><code class="highlighter-rouge">Safari</code>访问<a href="chls.pro/ssl">chls.pro/ssl</a>,安装描述文件</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-965cab435bd0e984.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:25%" />
+</div>
+
+<p><code class="highlighter-rouge">设置</code> -&gt; <code class="highlighter-rouge">通用</code> -&gt; <code class="highlighter-rouge">关于本机</code> -&gt; <code class="highlighter-rouge">证书信任设置</code>,开启完全信任</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-230c6db30c00b8c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:25%" />
+</div>
+
+<p>此时可以进行抓包了</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-2b28ca25e5e67f48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<h4 id="mac端抓包">Mac端抓包</h4>
+
+<p>启动<code class="highlighter-rouge">Charles</code>客户端
+<code class="highlighter-rouge">Proxy</code> -&gt; <code class="highlighter-rouge">macOS Proxy</code>
+<code class="highlighter-rouge">Proxy</code> -&gt; <code class="highlighter-rouge">SSL Proxying Settings</code> -&gt; <code class="highlighter-rouge">SSL Proxying</code> -&gt; <code class="highlighter-rouge">Add</code></p>
+
+<ul>
+  <li>Host:为需要过滤的域名地址,<code class="highlighter-rouge">*</code>表示不过滤</li>
+  <li>Port:固定为<code class="highlighter-rouge">443</code>,<code class="highlighter-rouge">*</code>表示任意端口</li>
+</ul>
+
+<p><code class="highlighter-rouge">Help</code> -&gt; <code class="highlighter-rouge">SSL Proxying</code> -&gt; <code class="highlighter-rouge">Install Charles Root Certificate</code>
+    此时会打开<code class="highlighter-rouge">钥匙串访问</code>安装<code class="highlighter-rouge">Charles Proxy CA</code>证书,双击证书,展开<code class="highlighter-rouge">信任</code>选项,选择<code class="highlighter-rouge">始终信任</code>,如果证书安装不了请搜索<code class="highlighter-rouge">Charles Proxy CA</code>,删除就已失效证书再进行安装操作.</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-49203130682509a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<p>此时Mac端可以进行抓包了</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/336727-00b947453f0dad85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+<img src="http://upload-images.jianshu.io/upload_images/336727-fa169ba9dd23df92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Nelson. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/jekyll-uno/js/main.js?1520060846071679000"></script>
+
+
+    </div>
+  </body>
+</html>

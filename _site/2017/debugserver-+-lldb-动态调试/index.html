@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>debugserver-+-lldb-动态调试</title>
+  <meta name="description" content="以调试设备界面为例,改变背景颜色、获取VPN界面UISwitch控件响应事件.
+Mac通过ssh连接越狱设备,默认密码alpine
+Nelson:~ Nelson$ ssh root@192.168.xx.xxx
+
+
+">
+  <meta name="author" content="Nelson">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="debugserver-+-lldb-动态调试">
+  <meta name="twitter:description" content="以调试设备界面为例,改变背景颜色、获取VPN界面UISwitch控件响应事件.
+Mac通过ssh连接越狱设备,默认密码alpine
+Nelson:~ Nelson$ ssh root@192.168.xx.xxx
+
+
+">
+  
+  <meta name="twitter:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="debugserver-+-lldb-动态调试">
+  <meta property="og:description" content="以调试设备界面为例,改变背景颜色、获取VPN界面UISwitch控件响应事件.
+Mac通过ssh连接越狱设备,默认密码alpine
+Nelson:~ Nelson$ ssh root@192.168.xx.xxx
+
+
+">
+  <meta property="og:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/jekyll-uno/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/jekyll-uno/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/jekyll-uno/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/jekyll-uno/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/jekyll-uno/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/jekyll-uno/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/jekyll-uno/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/jekyll-uno/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jekyll-uno/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/jekyll-uno/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/jekyll-uno/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/jekyll-uno/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/jekyll-uno/css/main.css?1520060846071679000">
+  <link rel="canonical" href="http://localhost:4000/jekyll-uno/2017/debugserver-+-lldb-%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95/">
+  <link rel="alternate" type="application/rss+xml" title="Nelson" href="/jekyll-uno/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/jekyll-uno/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/jekyll-uno/" title="link to home of Nelson">
+          <img src="/jekyll-uno/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Nelson</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">iOS技术杂谈</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/jekyll-uno/#blog" title="link to Nelson blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/XieXieZhongxi" title="XieXieZhongxi on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:xiezhongxi0525@foxmail.com" title="Email xiezhongxi0525@foxmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/jekyll-uno/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-08-17 17:19" class="post-meta__date date">17 Aug 2017</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/jekyll-uno/tags/#越狱">越狱</a> <a href="/jekyll-uno/tags/#debugserver">debugserver</a> <a href="/jekyll-uno/tags/#lldb">lldb</a> </span>
+      
+    </div>
+    <h2 class="post-title">debugserver-+-lldb-动态调试</h2>
+  </header>
+
+  <section class="post">
+    <h5 id="以调试设备界面为例改变背景颜色获取vpn界面uiswitch控件响应事件">以调试设备界面为例,改变背景颜色、获取VPN界面UISwitch控件响应事件.</h5>
+<p>Mac通过<code class="highlighter-rouge">ssh</code>连接越狱设备,默认密码<code class="highlighter-rouge">alpine</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Nelson</span><span class="ss">:~</span> <span class="no">Nelson</span><span class="err">$</span> <span class="n">ssh</span> <span class="n">root</span><span class="err">@</span><span class="mf">192.168</span><span class="p">.</span><span class="nf">xx</span><span class="p">.</span><span class="nf">xxx</span>
+</code></pre></div></div>
+
+<p>启动<code class="highlighter-rouge">Preferences</code>进程,开启<code class="highlighter-rouge">1234</code>端口,等待任意IP地址的lldb接入</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># debugserver -x backboard *:1234 /Applications/Preferences.app/Preferences</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Nelson</span><span class="o">-</span><span class="n">iPad</span><span class="ss">:~</span> <span class="n">root</span><span class="c1"># debugserver -x backboard *:1234 /Applications/Preferences.app/Preferences</span>
+<span class="n">debugserver</span><span class="o">-</span><span class="err">@</span><span class="p">(</span><span class="c1">#)PROGRAM:debugserver  PROJECT:debugserver-340.3.51.1</span>
+ <span class="k">for</span> <span class="n">arm64</span><span class="o">.</span>
+<span class="no">Listening</span> <span class="n">to</span> <span class="n">port</span> <span class="mi">1234</span> <span class="k">for</span> <span class="n">a</span> <span class="n">connection</span> <span class="n">from</span> <span class="o">*...</span>
+</code></pre></div></div>
+<p>Mac启动新窗口终端,进入Xcode的lldb调试模式</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># /Applications/Xcode.app/Contents/Developer/usr/bin/lldb</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Nelson</span><span class="ss">:~</span> <span class="no">Nelson</span><span class="err">$</span> <span class="o">/</span><span class="no">Applications</span><span class="o">/</span><span class="no">Xcode</span><span class="p">.</span><span class="nf">app</span><span class="o">/</span><span class="no">Contents</span><span class="o">/</span><span class="no">Developer</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">lldb</span>
+<span class="p">(</span><span class="n">lldb</span><span class="p">)</span> 
+</code></pre></div></div>
+<p>连接正在等待的debugserver</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># process connect connect://192.168.xx.xxx:1234</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">process</span> <span class="n">connect</span> <span class="n">connect</span><span class="ss">:/</span><span class="o">/</span><span class="mf">192.168</span><span class="p">.</span><span class="nf">xx</span><span class="p">.</span><span class="nf">xxx</span><span class="p">:</span><span class="mi">1234</span>
+<span class="no">Process</span> <span class="mi">6529</span> <span class="n">stopped</span>
+<span class="o">*</span> <span class="n">thread</span> <span class="c1">#1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP</span>
+    <span class="n">frame</span> <span class="c1">#0: 0x00000001819f54bc libsystem_kernel.dylib`mach_msg_trap + 8</span>
+<span class="n">libsystem_kernel</span><span class="p">.</span><span class="nf">dylib</span><span class="sb">`mach_msg_trap:
+-&gt;  0x1819f54bc &lt;+8&gt;: ret    
+
+libsystem_kernel.dylib`</span><span class="ss">mach_msg_overwrite_trap:
+    </span><span class="mh">0x1819f54c0</span> <span class="o">&lt;+</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">mov</span>    <span class="n">x16</span><span class="p">,</span> <span class="c1">#-0x20</span>
+    <span class="mh">0x1819f54c4</span> <span class="o">&lt;+</span><span class="mi">4</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">svc</span>    <span class="c1">#0x80</span>
+    <span class="mh">0x1819f54c8</span> <span class="o">&lt;+</span><span class="mi">8</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">ret</span>    
+<span class="p">(</span><span class="n">lldb</span><span class="p">)</span>  
+</code></pre></div></div>
+<p>打印所有界面层次</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[[[</span><span class="no">UIApplication</span> <span class="n">sharedApplication</span><span class="p">]</span> <span class="n">keyWindow</span><span class="p">]</span> <span class="n">recursiveDescription</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-50bbeb4f622abefa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<p>搜索<code class="highlighter-rouge">UITableView:</code>获取内存地址为<code class="highlighter-rouge">0x13e051800</code></p>
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-1fa3813e74637645.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<p>修改<code class="highlighter-rouge">UITableView(0x13e051800)</code>的背景颜色为<code class="highlighter-rouge">yellowColor</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UITableView</span><span class="o">*</span><span class="p">)</span><span class="mh">0x13e051800</span> <span class="n">setBackgroundColor</span><span class="p">:[</span><span class="no">UIColor</span> <span class="n">yellowColor</span><span class="p">]]</span>
+</code></pre></div></div>
+<p>现在界面处理调试状态,需要手动刷新下界面</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">e</span> <span class="p">(</span><span class="n">void</span><span class="p">)[</span><span class="no">CATransaction</span> <span class="n">flush</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-e0bc3cae51adee44.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<p>修改另外一个<code class="highlighter-rouge">UITableView(0x13e8ac400)</code>的背景颜色</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UITableView</span><span class="o">*</span><span class="p">)</span><span class="mh">0x13e8ac400</span> <span class="n">setBackgroundColor</span><span class="p">:[</span><span class="no">UIColor</span> <span class="n">greenColor</span><span class="p">]]</span>
+<span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">e</span> <span class="p">(</span><span class="n">void</span><span class="p">)[</span><span class="no">CATransaction</span> <span class="n">flush</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-93d875c44f187c4a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<p>获取<code class="highlighter-rouge">VPN</code>界面的<code class="highlighter-rouge">UISwitch</code>的<code class="highlighter-rouge">allTargets </code></p>
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-bb1a1b98657c72d3.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UISwitch</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x13f263980</span> <span class="n">allTargets</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UISwitch</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x13f263980</span> <span class="n">allTargets</span><span class="p">]</span>
+<span class="p">{(</span>
+    <span class="o">&lt;</span><span class="no">VPNToggleCell</span><span class="p">:</span> <span class="mh">0x13e0c3400</span><span class="p">;</span> <span class="n">baseClass</span> <span class="o">=</span> <span class="no">UITableViewCell</span><span class="p">;</span> <span class="n">frame</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="mf">55.5</span><span class="p">;</span> <span class="mf">594.5</span> <span class="mi">45</span><span class="p">);</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">'状态'</span><span class="p">;</span> <span class="n">autoresize</span> <span class="o">=</span> <span class="no">W</span><span class="p">;</span> <span class="n">tag</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="n">layer</span> <span class="o">=</span> <span class="o">&lt;</span><span class="no">CALayer</span><span class="p">:</span> <span class="mh">0x13f004a80</span><span class="o">&gt;&gt;</span>
+<span class="p">)}</span>
+
+<span class="p">(</span><span class="n">lldb</span><span class="p">)</span> 
+</code></pre></div></div>
+<p>此处的<code class="highlighter-rouge">Target</code>为上一步获取到的<code class="highlighter-rouge">VPNToggleCell(0x13e0c3400)</code></p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UISwitch</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x13f263980</span> <span class="n">actionsForTarget</span><span class="p">:(</span><span class="nb">id</span><span class="p">)</span><span class="mh">0x13e0c3400</span> <span class="n">forControlEvent</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">po</span> <span class="p">[(</span><span class="no">UISwitch</span> <span class="o">*</span><span class="p">)</span><span class="mh">0x13f263980</span> <span class="n">actionsForTarget</span><span class="p">:(</span><span class="nb">id</span><span class="p">)</span><span class="mh">0x13e0c3400</span> <span class="n">forControlEvent</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&lt;</span><span class="n">__NSArrayM</span> <span class="mh">0x13ddd9ca0</span><span class="o">&gt;</span><span class="p">(</span>
+<span class="ss">controlChanged:
+</span><span class="p">)</span>
+<span class="p">(</span><span class="n">lldb</span><span class="p">)</span>
+</code></pre></div></div>
+<p>获取到了<code class="highlighter-rouge">UISwitch</code>的响应方法为<code class="highlighter-rouge">controlChanged:</code>,接下来为<code class="highlighter-rouge">UISwitch</code>的点击添加断点</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">br</span> <span class="n">set</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"-[VPNToggleCell controlChanged:]"</span>
+<span class="no">Breakpoint</span> <span class="mi">1</span><span class="p">:</span> <span class="n">no</span> <span class="n">locations</span> <span class="p">(</span><span class="n">pending</span><span class="p">)</span><span class="o">.</span>
+<span class="no">WARNING</span><span class="p">:</span>  <span class="no">Unable</span> <span class="n">to</span> <span class="n">resolve</span> <span class="n">breakpoint</span> <span class="n">to</span> <span class="n">any</span> <span class="n">actual</span> <span class="n">locations</span><span class="o">.</span>
+</code></pre></div></div>
+<p>添加断点失败了,也就是说明<code class="highlighter-rouge">controlChanged:</code>这个方法不属于<code class="highlighter-rouge">VPNToggleCell </code>这个类,于是查找<code class="highlighter-rouge">Runtime Header</code>,找到了<code class="highlighter-rouge">PSControlTableCell</code>这个类</p>
+
+<p><a href="https://github.com/NSExceptional/iOS-9.0.2-Headers/blob/54364bb0dbcca5d316609e7a17af88ff97566631/System/Library/PrivateFrameworks/Preferences.framework/PSControlTableCell.h">PSControlTableCell.h</a></p>
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-29ed85ead16366d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">br</span> <span class="n">set</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"-[PSControlTableCell controlChanged:]"</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">br</span> <span class="n">set</span> <span class="o">-</span><span class="n">n</span> <span class="s2">"-[PSControlTableCell controlChanged:]"</span>
+<span class="no">Breakpoint</span> <span class="mi">3</span><span class="p">:</span> <span class="n">where</span> <span class="o">=</span> <span class="no">Preferences</span><span class="sb">`-[PSControlTableCell controlChanged:], address = 0x0000000189488618
+(lldb) 
+</span></code></pre></div></div>
+<p>断点添加成功了,查看下所有的断点列表</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">br</span> <span class="n">list</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">br</span> <span class="n">list</span>
+<span class="no">Current</span> <span class="ss">breakpoints:
+</span><span class="mi">3</span><span class="p">:</span> <span class="nb">name</span> <span class="o">=</span> <span class="s1">'-[PSControlTableCell controlChanged:]'</span><span class="p">,</span> <span class="n">locations</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">resolved</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">hit</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="mf">3.1</span><span class="p">:</span> <span class="n">where</span> <span class="o">=</span> <span class="no">Preferences</span><span class="sb">`-[PSControlTableCell controlChanged:], address = 0x0000000189488618, resolved, hit count = 0 
+
+(lldb)
+</span></code></pre></div></div>
+<p>按需求可以对断点进行以下操作:
+<code class="highlighter-rouge">3针对以上的断点序号</code>
+禁用断点:<code class="highlighter-rouge">(lldb) br dis 3</code>
+启用断点:<code class="highlighter-rouge">(lldb) br en 3</code>
+删除断点:<code class="highlighter-rouge">(lldb) br del 3</code></p>
+
+<p>退出调试状态</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">c</span>
+</code></pre></div></div>
+<p>此时界面可以进行操作了,点击<code class="highlighter-rouge">VPN</code>界面的<code class="highlighter-rouge">UISwitch</code>执行了断点操作,再次进入了调试模式</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">c</span>
+<span class="no">Process</span> <span class="mi">6529</span> <span class="n">resuming</span>
+<span class="no">Process</span> <span class="mi">6529</span> <span class="n">stopped</span>
+<span class="o">*</span> <span class="n">thread</span> <span class="c1">#1, queue = 'com.apple.main-thread', stop reason = breakpoint 3.1</span>
+    <span class="n">frame</span> <span class="c1">#0: 0x0000000189488618 Preferences`-[PSControlTableCell controlChanged:]</span>
+<span class="no">Preferences</span><span class="sb">`-[PSControlTableCell controlChanged:]:
+-&gt;  0x189488618 &lt;+0&gt;:  stp    x24, x23, [sp, #-0x40]!
+    0x18948861c &lt;+4&gt;:  stp    x22, x21, [sp, #0x10]
+    0x189488620 &lt;+8&gt;:  stp    x20, x19, [sp, #0x20]
+    0x189488624 &lt;+12&gt;: stp    x29, x30, [sp, #0x30]
+(lldb)  
+</span></code></pre></div></div>
+<p>执行<code class="highlighter-rouge">c</code>、<code class="highlighter-rouge">s</code>进行下一步操作</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">c</span>
+</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">n</span>
+</code></pre></div></div>
+<p>进入调试模式</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">lldb</span><span class="p">)</span> <span class="n">process</span> <span class="n">interrupt</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">lldb</code>其他指令</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">指令</th>
+      <th style="text-align: center">指令说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">thread list</td>
+      <td style="text-align: center">线程列表</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">image list -o -f</td>
+      <td style="text-align: center">进程列表</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">frame info</td>
+      <td style="text-align: center">查看当前代码</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Nelson. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/jekyll-uno/js/main.js?1520060846071679000"></script>
+
+
+    </div>
+  </body>
+</html>

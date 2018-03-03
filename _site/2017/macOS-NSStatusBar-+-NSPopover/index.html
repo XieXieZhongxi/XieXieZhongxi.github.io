@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>macOS NSStatusBar + NSPopover</title>
+  <meta name="description" content="NSStatusBar : macOS系统的顶部导航栏item
+
+">
+  <meta name="author" content="Nelson">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="macOS NSStatusBar + NSPopover">
+  <meta name="twitter:description" content="NSStatusBar : macOS系统的顶部导航栏item
+
+">
+  
+  <meta name="twitter:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="macOS NSStatusBar + NSPopover">
+  <meta property="og:description" content="NSStatusBar : macOS系统的顶部导航栏item
+
+">
+  <meta property="og:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/jekyll-uno/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/jekyll-uno/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/jekyll-uno/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/jekyll-uno/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/jekyll-uno/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/jekyll-uno/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/jekyll-uno/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/jekyll-uno/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jekyll-uno/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/jekyll-uno/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/jekyll-uno/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/jekyll-uno/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/jekyll-uno/css/main.css?1520060846071679000">
+  <link rel="canonical" href="http://localhost:4000/jekyll-uno/2017/macOS-NSStatusBar-+-NSPopover/">
+  <link rel="alternate" type="application/rss+xml" title="Nelson" href="/jekyll-uno/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/jekyll-uno/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/jekyll-uno/" title="link to home of Nelson">
+          <img src="/jekyll-uno/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Nelson</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">iOS技术杂谈</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/jekyll-uno/#blog" title="link to Nelson blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/XieXieZhongxi" title="XieXieZhongxi on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:xiezhongxi0525@foxmail.com" title="Email xiezhongxi0525@foxmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/jekyll-uno/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-01-20 16:28" class="post-meta__date date">20 Jan 2017</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/jekyll-uno/tags/#macOS">macOS</a> <a href="/jekyll-uno/tags/#NSStatusBar">NSStatusBar</a> <a href="/jekyll-uno/tags/#NSPopover">NSPopover</a> </span>
+      
+    </div>
+    <h2 class="post-title">macOS NSStatusBar + NSPopover</h2>
+  </header>
+
+  <section class="post">
+    <p><a href="https://developer.apple.com/reference/appkit/nsstatusbar">NSStatusBar</a> : macOS系统的顶部导航栏item</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@interface</span> <span class="no">AppDelegate</span> <span class="p">(){</span>
+    <span class="no">NSStatusItem</span> <span class="o">*</span> <span class="n">statusItem</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span> <span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">applicationDidFinishLaunching</span><span class="p">:(</span><span class="no">NSNotification</span> <span class="o">*</span><span class="p">)</span><span class="n">aNotification</span> <span class="p">{</span>
+    <span class="sr">//</span> <span class="no">Insert</span> <span class="n">code</span> <span class="n">here</span> <span class="n">to</span> <span class="n">initialize</span> <span class="n">your</span> <span class="n">application</span>
+    <span class="sr">/* 初始化 */</span>
+    <span class="n">statusItem</span> <span class="o">=</span> <span class="p">[[</span><span class="no">NSStatusBar</span> <span class="n">systemStatusBar</span><span class="p">]</span> <span class="n">statusItemWithLength</span><span class="ss">:NSVariableStatusItemLength</span><span class="p">];</span>
+    <span class="sr">/* 设置NSImage * /</span>
+    <span class="p">[</span><span class="n">statusItem</span><span class="p">.</span><span class="nf">button</span> <span class="n">setImage</span><span class="p">:[</span><span class="no">NSImage</span> <span class="n">imageNamed</span><span class="p">:</span><span class="err">@</span><span class="s2">"statusItem"</span><span class="p">]];</span>
+    <span class="sr">/* 设置点击响应事件 */</span>
+    <span class="n">statusItem</span><span class="p">.</span><span class="nf">action</span> <span class="o">=</span> <span class="vi">@selector</span><span class="p">(</span><span class="n">touchStatusItem</span><span class="p">:);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><a href="https://developer.apple.com/reference/appkit/nspopover">NSPopover</a> : pop视图</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@interface</span> <span class="no">AppDelegate</span> <span class="p">(){</span>
+    <span class="no">NSPopover</span> <span class="o">*</span> <span class="n">popover</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">-</span><span class="p">(</span><span class="n">void</span><span class="p">)</span><span class="n">touchStatusItem</span><span class="p">:(</span><span class="no">NSStatusBarButton</span> <span class="o">*</span><span class="p">)</span><span class="n">button</span><span class="p">{</span>
+    <span class="sr">/* 初始化 */</span>
+    <span class="n">popover</span> <span class="o">=</span> <span class="p">[[</span><span class="no">NSPopover</span> <span class="n">alloc</span><span class="p">]</span><span class="n">init</span><span class="p">];</span>
+    <span class="sr">/* 设置动画 */</span>
+    <span class="n">popover</span><span class="p">.</span><span class="nf">behavior</span> <span class="o">=</span> <span class="no">NSPopoverBehaviorTransient</span><span class="p">;</span>
+    <span class="sr">/* 设置外观 */</span>
+    <span class="n">popover</span><span class="p">.</span><span class="nf">appearance</span> <span class="o">=</span> <span class="p">[</span><span class="no">NSAppearance</span> <span class="n">appearanceNamed</span><span class="ss">:NSAppearanceNameVibrantLight</span><span class="p">];</span>
+    <span class="sr">/* 设置展示视图 */</span>
+    <span class="n">popover</span><span class="p">.</span><span class="nf">contentViewController</span> <span class="o">=</span> <span class="p">[[</span><span class="no">PopViewController</span> <span class="n">alloc</span><span class="p">]</span><span class="n">initWithNibName</span><span class="p">:</span><span class="err">@</span><span class="s2">"PopViewController"</span> <span class="n">bundle</span><span class="ss">:nil</span><span class="p">];</span>
+    <span class="sr">/* 设置展示方位 */</span>
+    <span class="p">[</span><span class="n">popover</span> <span class="n">showRelativeToRect</span><span class="ss">:button</span><span class="p">.</span><span class="nf">bounds</span> <span class="n">ofView</span><span class="ss">:button</span> <span class="n">preferredEdge</span><span class="ss">:NSRectEdgeMaxY</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>效果图</p>
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-c9945e7b7576aa2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%" />
+</div>
+
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Nelson. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/jekyll-uno/js/main.js?1520060846071679000"></script>
+
+
+    </div>
+  </body>
+</html>

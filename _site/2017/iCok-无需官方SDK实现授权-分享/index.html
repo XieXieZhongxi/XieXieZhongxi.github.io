@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>iCok-无需官方SDK实现授权、分享</title>
+  <meta name="description" content="无需官方SDK,实现微信、QQ社交功能,支持Web登录
+
+">
+  <meta name="author" content="Nelson">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iCok-无需官方SDK实现授权、分享">
+  <meta name="twitter:description" content="无需官方SDK,实现微信、QQ社交功能,支持Web登录
+
+">
+  
+  <meta name="twitter:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iCok-无需官方SDK实现授权、分享">
+  <meta property="og:description" content="无需官方SDK,实现微信、QQ社交功能,支持Web登录
+
+">
+  <meta property="og:image" content="/jekyll-uno/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/jekyll-uno/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/jekyll-uno/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/jekyll-uno/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/jekyll-uno/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/jekyll-uno/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/jekyll-uno/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/jekyll-uno/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/jekyll-uno/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/jekyll-uno/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/jekyll-uno/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/jekyll-uno/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/jekyll-uno/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/jekyll-uno/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/jekyll-uno/css/main.css?1520060846071679000">
+  <link rel="canonical" href="http://localhost:4000/jekyll-uno/2017/iCok-%E6%97%A0%E9%9C%80%E5%AE%98%E6%96%B9SDK%E5%AE%9E%E7%8E%B0%E6%8E%88%E6%9D%83-%E5%88%86%E4%BA%AB/">
+  <link rel="alternate" type="application/rss+xml" title="Nelson" href="/jekyll-uno/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/jekyll-uno/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/jekyll-uno/" title="link to home of Nelson">
+          <img src="/jekyll-uno/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Nelson</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">iOS技术杂谈</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/jekyll-uno/#blog" title="link to Nelson blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+
+            
+
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/XieXieZhongxi" title="XieXieZhongxi on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:xiezhongxi0525@foxmail.com" title="Email xiezhongxi0525@foxmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/jekyll-uno/feed.xml" title="Subscribe" target="_blank">
+                <i class="icon icon-rss"></i>
+                <span class="label">RSS</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-12-01 16:02" class="post-meta__date date">1 Dec 2017</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/jekyll-uno/tags/#SDK">SDK</a> </span>
+      
+    </div>
+    <h2 class="post-title">iCok-无需官方SDK实现授权、分享</h2>
+  </header>
+
+  <section class="post">
+    <p>无需官方SDK,实现微信、QQ社交功能,支持Web登录</p>
+
+<h3 id="icok"><a href="https://github.com/XieXieZhongxi/iCok">iCok</a></h3>
+
+<h4 id="configuration">Configuration.</h4>
+<p>如果需要使用<code class="highlighter-rouge">canOpenURL</code>判断是否安装客户端,则务必添加以下白名单</p>
+
+<ul>
+  <li><code class="highlighter-rouge">wechat</code></li>
+  <li><code class="highlighter-rouge">weixin</code></li>
+  <li><code class="highlighter-rouge">mqqOpensdkSSoLogin</code></li>
+  <li><code class="highlighter-rouge">mqqopensdkapiV2</code></li>
+  <li><code class="highlighter-rouge">mqqwpa</code></li>
+  <li><code class="highlighter-rouge">mqqopensdkapiV3</code></li>
+  <li><code class="highlighter-rouge">wtloginmqq2</code></li>
+  <li><code class="highlighter-rouge">mqq</code></li>
+  <li><code class="highlighter-rouge">mqqapi</code></li>
+</ul>
+
+<p>添加<code class="highlighter-rouge">URL Schemes</code></p>
+
+<ul>
+  <li><code class="highlighter-rouge">tencent111111111</code></li>
+  <li><code class="highlighter-rouge">wxa6711111111</code></li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+
+<h5 id="微信登录"><code class="highlighter-rouge">微信登录</code></h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">iCok</span> <span class="n">loginWithWXAppId</span><span class="p">:</span><span class="err">@</span><span class="s2">"wxa6711111111"</span> <span class="n">appSecret</span><span class="p">:</span><span class="err">@</span><span class="s2">"bb870c004ac64486379341949e17d5b4"</span> <span class="n">completeHandler</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"微信登录成功:%@"</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">failure</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"微信登录失败:%@"</span><span class="p">,</span><span class="n">error</span><span class="p">.</span><span class="nf">description</span><span class="p">);</span>
+<span class="p">}];</span>
+
+</code></pre></div></div>
+
+<h5 id="微信分享"><code class="highlighter-rouge">微信分享</code></h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">iCok</span> <span class="n">shareWithWXAppId</span><span class="p">:</span><span class="err">@</span><span class="s2">"wxa6711111111"</span> <span class="n">scene</span><span class="ss">:ICOK_SESSION_TYPE</span> <span class="n">title</span><span class="p">:</span><span class="err">@</span><span class="s2">"title"</span> <span class="n">description</span><span class="p">:</span><span class="err">@</span><span class="s2">"description"</span> <span class="n">link</span><span class="p">:</span><span class="err">@</span><span class="s2">"https://www.github.com"</span> <span class="n">image</span><span class="p">:[</span><span class="no">UIImage</span> <span class="n">imageNamed</span><span class="p">:</span><span class="err">@</span><span class="s2">"profile"</span><span class="p">]</span> <span class="n">completeHandler</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"微信分享成功"</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">failure</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"微信分享失败:%@"</span><span class="p">,</span><span class="n">error</span><span class="p">.</span><span class="nf">description</span><span class="p">);</span>
+<span class="p">}];</span>
+</code></pre></div></div>
+
+<h5 id="qq登录"><code class="highlighter-rouge">QQ登录</code></h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">iCok</span> <span class="n">loginWithQQAppId</span><span class="p">:</span><span class="err">@</span><span class="s2">"111111111"</span> <span class="n">completeHandler</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"QQ登录成功:%@"</span><span class="p">,</span><span class="n">response</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">failure</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">){</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"QQ登录失败:%@"</span><span class="p">,</span><span class="n">error</span><span class="p">.</span><span class="nf">description</span><span class="p">);</span>
+<span class="p">}];</span>
+</code></pre></div></div>
+
+<h5 id="qq分享"><code class="highlighter-rouge">QQ分享</code></h5>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">iCok</span> <span class="n">shareWithQQAppId</span><span class="p">:</span><span class="err">@</span><span class="s2">"111111111"</span> <span class="n">scene</span><span class="ss">:ICOK_SESSION_TYPE</span> <span class="n">title</span><span class="p">:</span><span class="err">@</span><span class="s2">"title"</span> <span class="n">description</span><span class="p">:</span><span class="err">@</span><span class="s2">"description"</span> <span class="n">link</span><span class="p">:</span><span class="err">@</span><span class="s2">"https://www.github.com"</span> <span class="n">image</span><span class="p">:[</span><span class="no">UIImage</span> <span class="n">imageNamed</span><span class="p">:</span><span class="err">@</span><span class="s2">"profile"</span><span class="p">]</span> <span class="n">completeHandler</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"QQ分享成功"</span><span class="p">);</span>
+<span class="p">}</span> <span class="n">failure</span><span class="ss">:^</span><span class="p">(</span><span class="no">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"QQ分享失败:%@"</span><span class="p">,</span><span class="n">error</span><span class="p">.</span><span class="nf">description</span><span class="p">);</span>
+<span class="p">}];</span>
+</code></pre></div></div>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2018 Nelson. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/jekyll-uno/js/main.js?1520060846071679000"></script>
+
+
+    </div>
+  </body>
+</html>

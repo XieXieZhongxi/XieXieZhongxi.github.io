@@ -1,0 +1,49 @@
+---
+title:  "ssh无密码登录"
+date:   2017-08-17 17:47:25
+categories: [iOS]
+tags: [越狱,ssh]
+---
+
+
+执行`ssh-keygen -t rsa`命令行生成公钥、密钥,需要交互输入的直接回车键
+``` ruby
+Nelson:~ Nelson$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/freegeek/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/freegeek/.ssh/id_rsa.
+Your public key has been saved in /Users/freegeek/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:8apTQO4+0lrrLaAOj+rDNEvBn4RobR6NK4dLpz1B0ck Nelson@Nelson.local
+The key's randomart image is:
++---[RSA 2048]----+
+|    o .          |
+|   . E.          |
+|o o +o  .        |
+|.= B .o  o       |
+|. O +. .S .      |
+| B O. . ..       |
+|* X..+...        |
+| X.o..*+         |
+|=o+ o+++.        |
++----[SHA256]-----+
+```
+
+此时`.ssh`目录会多出`id_rsa`、`id_rsa.pub`两个文件.
+
+<div align="center">
+    <img src="http://upload-images.jianshu.io/upload_images/336727-2e0337b1ebdfd233.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:45%">
+</div>
+
+将公钥文件复制到远程设备中
+``` ruby
+# ssh-copy-id root@192.168.xx.xxx
+```
+
+此时再次通过`ssh`连接远程设备就不需要密码
+```
+Nelson:~ Nelson$ ssh root@192.168.10.131
+Nelson-iPad:~ root# 
+```

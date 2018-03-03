@@ -1,36 +1,44 @@
-title: 仲习的主页
-escription: > # this means to ignore newlines until "baseurl:"
-  Born as G(r)eek.
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://xiezhongxi.com" # the base hostname & protocol for your site, e.g. http://example.com
-site-twitter: "ThodorisBais"
+# Site settings
+title: Nelson
+description: 'iOS技术杂谈'
+# url: 'http://joshgerdes.com/jekyll-uno'
+url: 'http://xiezhongxi.com'
+baseurl: '/jekyll-uno'
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
 
-# Author Settings
-author: 谢仲习
-author-img: zhongxi.jpg
-about-author: iOS开发工程师,现居广州
-# twitter: ThodorisBais
-# facebook: toubou.techblog
-github: XieXieZhongxi
-# linkedin: thodorisbais
-# tumblr: thodoris.bais@gmail.com
-email: xiezhongxi0525@foxmail.com
+author:
+  name: 'Nelson'
+  email: xiezhongxi0525@foxmail.com
+  twitter_username: 
+  facebook_username: 
+  github_username: XieXieZhongxi
+  linkedin_username:  
 
-# Disqus
-discus-identifier: thodorisbais # add your discus identifier
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
 
-# Tracker
-analytics: UA-108110726-1
-
-# Build Settings
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
 markdown: kramdown
-plugins_dir:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jemoji
+highlighter: rouge
 
-paginate: 8
-paginate_path: "/page/:num"
+sass:
+    sass_dir: _sass
+    style: compressed
 
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
